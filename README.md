@@ -1,37 +1,24 @@
-# happy-trees
-Tree query application
+[![Build Status](https://travis-ci.com/alperg/project2-starter-auth.svg?branch=master)](https://travis-ci.com/alperg/project2-starter-auth)
 
-###
-Project 02 Requirements
+# Project 2 Starter with Auth
 
-The group project must meet the following requirements:
+A simple starter project with Express, Handlebars, Sequelize, Passport and Local Auth.
 
-	* Use Node.js and Express.js to create a RESTful API.
+## Live link:
+https://project2-starter-auth.herokuapp.com/
 
-	* Use a template engine such as Handlebars.js.
+## Requirements:
 
-	* Use MySQL and the Sequelize ORM for the database.
+* Add `.env` file with the following content:
 
-	* Have both GET and POST routes for retrieving and adding new data.
-
-	* Deploy using Heroku (with data).
-
-	* Use at least one new library, package, or technology that we haven't discussed.
-
-	* Have a polished UI.
-
-	* Be responsive.
-
-	* Be interactive (i.e., accept and respond to user input).
-
-	* Must have a folder structure that meets the MVC paradigm.
-
-	* Must include authentication (cookies and express-session).
-
-	* Must protect API keys and sensitive information with environment variables.
-
-	* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-	* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-	* Finally, you must add your project to the portfolio that you created in Module 2.
+```
+SEQUELIZE_USER=your_mysql_db_user
+SEQUELIZE_PASSWORD=your_mysql_db_password
+SEQUELIZE_HOST=your_mysql_db_host
+AUTH_SECRET=your_auth_secret_key
+ADMIN_USER_PWD=admin_password
+USER_PWD=user_pwd
+FORCE_SYNC=true_or_false
+TU=mysql_user
+TP=mysql_password
+```
