@@ -22,3 +22,39 @@ FORCE_SYNC=true_or_false
 TU=mysql_user
 TP=mysql_password
 ```
+
+
+
+## table data 
+
+-Whats in the excel file 
+
+-Site name 
+
+-site lat and long
+
+-site county, drop down?
+
+-site river basin 
+Broad
+Cape fear
+Catawba 
+chowan 
+french broad
+Hiawassee
+Little Tennessee
+Lumber 
+Neuse 
+New
+Pasquotank
+Roanoke
+Savannah
+Tar-pamilico
+watuga
+white oak
+yadkin pee dee
+
+-Site eco-region
+Mountains
+Piedmont 
+costal plain
