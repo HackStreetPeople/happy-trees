@@ -73,3 +73,11 @@ hr {
 .card-body {
   color: #444;
 }
+
+/* Set the size of the div element that contains the Google map */
+#map {
+  height: 700px;
+  /* The height is 700 pixels */
+  width: 700px;
+  /* The width is 700 pixels */
+}
