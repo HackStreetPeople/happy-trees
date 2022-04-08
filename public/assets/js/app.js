@@ -1,6 +1,3 @@
-import { Loader } from "@googlemaps/js-api-loader";
-import MarkerClusterer from "@google/markerclustererplus";
-
 $("#add-user").on("click", function (event) {
   event.preventDefault();
 
@@ -143,30 +140,3 @@ $("#login").on("click", function (event) {
     }
   });
 });
-
-// The apiOptions object for Google Maps
-const apiOptions = {
-  apiKey: "AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU",
-};
-
-const loader = new Loader(apiOptions);
-
-loader.then(() => {
-  console.log("Maps JS API Loaded");
-});
-
-// Initialize and add the map
-function initMap() {
-  // The location of The Double Crown Bar
-  const doubleCrown = { lat: 35.57804, lng: -82.57887 };
-  // The map, centered at The Double Crown Bar
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 20,
-    center: doubleCrown,
-  });
-  // The marker, positioned at The Double Crown Bar
-  const marker = new google.maps.Marker({
-    position: doubleCrown,
-    map: map,
-  });
-}
