@@ -5,8 +5,9 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
-    <!-- insert other css framework here materialize or tailwind-->
-    </head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+</head>
     <body>
       <form action="/uploadfile" enctype="multipart/form-data" method="post">
         <input type="file" name="uploadfile" accept='csv' >
@@ -16,8 +17,8 @@
           <h1> Welcome To Happy Trees!</h1>
         <p>A helpful resource in viewing data collected on trees planted by Jordan's company.</p>
       </header>
-      <div class="container">
-          <div class="upload">
+      <div class="container" class="center-align">
+          <div class="upload" class="center-align">
           UPLOAD TREE DATA:
             <label for="tree-data">
                 Plot ID <input type="text" class="input">
@@ -35,5 +36,6 @@
 <footer>
     *RESOURCES?*
 </footer>
+<script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>
