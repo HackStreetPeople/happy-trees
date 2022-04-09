@@ -3,7 +3,22 @@ body {
   color: white;
   background-size: cover;
   height:100%;
+  font-family:cursive;
 
+}
+
+nav {
+  background-color: slategray;
+  border-style: ridge;
+  border-width: 5px;
+  border-color: black;
+  text-align: right;
+}
+
+
+.right-align {
+  margin: 10px;
+  align-items: center;
 }
 
 header{
@@ -15,7 +30,7 @@ header{
   border-width: 5px;
   width: 600px;
   height:100%;
-  margin-top: 5%;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -35,10 +50,17 @@ header{
   margin-right: 15%;
 }
 
+.data-types {
+  color: black;
+  font-size: 20px;
+}
+
 .input {
   border-style: ridge;
   border-color: black;
   margin: 3px;
+  text-align: center;
+  color: darkgreen;
 }
 
 .submit {

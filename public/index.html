@@ -4,6 +4,7 @@
       <title>Hackstreet People Project 2</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -13,14 +14,17 @@
         <input type="file" name="uploadfile" accept='csv' >
         <input type="submit" value="Upload CSV">
       </form>
+      <nav>
+          <h5>Login or Register</h5>
+      </nav>
       <header>
-          <h1> Welcome To Happy Trees!</h1>
-        <p>A helpful resource in viewing data collected on trees planted by Jordan's company.</p>
+          <h2>Welcome To Happy Trees!</h2>
+        <h5>A helpful resource in viewing data collected on trees planted by Jordan's company.</h5>
       </header>
-      <div class="container" class="center-align">
-          <div class="upload" class="center-align">
-          UPLOAD TREE DATA:
-            <label for="tree-data">
+      <div class="container">
+          <div class="upload">
+          <h5>UPLOAD TREE DATA:</h5>
+            <label for="tree-data" class="data-types">
                 Plot ID <input type="text" class="input">
                 Scientific Name<input type="text" class="input">
                 Height<input type="text" class="input">
@@ -29,13 +33,14 @@
             </label>
           </div>
           <div class="view">
-              VIEW TREE DATA BY:
+              <h5>VIEW TREE DATA BY:</h5>
               dropdown menu created with js?
           </div>
       </div>
 <footer>
     *RESOURCES?*
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>
