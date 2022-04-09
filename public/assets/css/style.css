@@ -5,8 +5,21 @@ body {
   height:100%
 }
 
+.container {
+  padding-bottom: 2%;
+  margin-top: 10%;
+  background: rgba(86, 101, 115,.6);
+  height:100%;
+  border-radius: .25rem;
+  margin-bottom: 2%;
+  width: 600px;
+}
+
 .jumbotron {
-  background: rgba(0,0,0,0);
+  background-color: darkolivegreen;
+  color: tan;
+  border-style: ridge;
+  border-width: 5px;
 }
 
 .modal {
@@ -36,15 +49,7 @@ body {
  height: 65px;
 }
 
-.container {
-  padding-bottom: 2%;
-  margin-top: 10%;
-  background: rgba(86, 101, 115,.6);
-  height:100%;
-  border-radius: .25rem;
-  margin-bottom: 2%;
-  width: 600px;
-}
+
 
 [data-useremail="true"] {
   color: white !important;
