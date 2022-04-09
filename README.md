@@ -58,3 +58,7 @@ yadkin pee dee
 Mountains
 Piedmont 
 costal plain
+
+**HERE IS A STARTING IDEA FOR OUR PROJECT:
+(The login functionality will likely be part of future developments to this app)
+![MOCK UP IAMGE](./public/assets/images/Screen%20Shot%202022-04-09%20at%203.29.30%20PM.png)
