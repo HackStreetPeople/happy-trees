@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Hackstreet People Project 2</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    <!-- insert other css framework here materialize or tailwind-->
+    </head>
+    <body>
+      <form action="/uploadfile" enctype="multipart/form-data" method="post">
+        <input type="file" name="uploadfile" accept='csv' >
+        <input type="submit" value="Upload CSV">
+      </form>
+      <header>
+          <h1> Welcome To Happy Trees!</h1>
+        <p>A helpful resource in viewing data collected on trees planted by Jordan's company.</p>
+      </header>
+      <div class="container">
+          <div class="upload">
+          UPLOAD TREE DATA:
+            <label for="tree-data">
+                Plot ID <input type="text" class="input">
+                Scientific Name<input type="text" class="input">
+                Height<input type="text" class="input">
+                <button type="submit" class="submit">Submit
+                </button>
+            </label>
+          </div>
+          <div class="view">
+              VIEW TREE DATA BY:
+              dropdown menu created with js?
+          </div>
+      </div>
+<footer>
+    *RESOURCES?*
+</footer>
+    </body>
+</html>
