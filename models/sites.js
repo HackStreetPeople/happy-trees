@@ -8,17 +8,17 @@ module.exports = function (sequelize, DataTypes) {
       },
 
       Scientific_Name: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false
       },
 
       Performance_Standard_Approval: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false
       },
 
       Planted_or_Volunteer: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false
       },
 
