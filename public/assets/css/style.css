@@ -2,82 +2,68 @@ body {
   background-image: url("../images/trees.jpeg");
   color: white;
   background-size: cover;
-  height:100%
+  height:100%;
+  font-family:cursive;
+
 }
 
-.jumbotron {
-  background: rgba(0,0,0,0);
+nav {
+  background-color: slategray;
+  border-style: ridge;
+  border-width: 5px;
+  border-color: black;
+  text-align: right;
 }
 
-.modal {
-  color: black;
+
+.right-align {
+  margin: 10px;
+  align-items: center;
 }
 
-.btn {
-  color:white;
-  background:#cadde1;
-  border: 1px solid white;
-}
-
-#user-form, .header-wrap, #create-form, .create-user-wrap {
-  padding: 20px;
-  border-radius: 15px;
-  margin: 20px 0;
-}
-
-#update-err-msg,
-#login-err-msg,
-#create-err-msg {
-  color: red !important;
-}
-
-#go-home {
- width: auto;
- height: 65px;
+header{
+  margin: auto;
+  background-color: slategray;
+  color:darkgreen;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  width: 600px;
+  height:100%;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .container {
-  padding-bottom: 2%;
-  margin-top: 10%;
-  background: rgba(86, 101, 115,.6);
-  height:100%;
-  border-radius: .25rem;
-  margin-bottom: 2%;
-  width: 600px;
+  text-align: center;
 }
 
-[data-useremail="true"] {
-  color: white !important;
-}
-[data-register="true"] {
-  color: white !important;
-}
-
-.lead {
-  font-size: 1.8rem;
-  font-weight: 500;
-}
-
-.userId h2, .header-wrap h1 {
-  text-transform: capitalize;
+.upload, .view {
+  background-color: slategray;
+  color:darkgreen;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  margin: 20px;
+  padding: 10px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
-hr {
-  background-color: #fff !important;
+.data-types {
+  color: black;
+  font-size: 20px;
 }
 
-.list-group-item {
-  line-height: 2.5;
+.input {
+  border-style: ridge;
+  border-color: black;
+  margin: 3px;
+  text-align: center;
+  color: darkgreen;
 }
 
-.card-body {
-  color: #444;
-}
-
-/* Set the size of the div element that contains the Google map */
-#map {
-  height: 700px;
-  /* The height is 700 pixels */
-  width: 700px;
-  /* The width is 700 pixels */
+.submit {
+  border-style: ridge;
+  border-color: black;
 }
