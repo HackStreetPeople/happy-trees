@@ -2,15 +2,16 @@ body {
   background-image: url("../images/trees.jpeg");
   background-size: cover;
   height:100vh;
-  font-family:cursive;
+  /* font-family:cursive; */
 }
 
-.nav-bar {
-  background-color: slategray;
+.navbar {
+  /* background-color: slategray; */
   border-style: ridge;
   border-width: 5px;
   border-color: black;
   text-align: right;
+  font-family: cursive;
 }
 
 .jumbotron{
@@ -24,6 +25,8 @@ body {
   height:100%;
   margin-top: 20px;
   text-align: center;
+  font-family: cursive;
+  font-weight: bold;
 }
 
 /* .container {
@@ -41,6 +44,8 @@ body {
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
+  font-family: cursive;
+  font-weight: bold;
 }
 
 .data-types {
@@ -56,7 +61,10 @@ body {
   color: darkgreen;
 }
 
-.submit {
+.button {
   border-style: ridge;
   border-color: black;
+  border-width:5px;
+  margin: 10px;
+  font-family: cursive;
 }

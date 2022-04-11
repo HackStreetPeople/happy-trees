@@ -1,50 +1,44 @@
 {{> nav/nav-block user=false register=true}}
 
-<div class="container">
-  <div class="row">
+{{!-- <div class="container"> --}}
+
+  {{!-- <div class="row"> --}}
+
     <div class="register">
       <header align="center">
-        <h1>Create Your Account</h1>
+        <h1 class="is-size-2">Create Your Account</h1>
         <h3 id="create-err-msg"></h3>
       </header>
 
       <h3 id="err-msg"></h3>
 
-      <form id= "create-form">
-        <div class="form-row">
           <div class="form-group">
-            <label for="inputFirst">First Name</label>
-            <input type="text" class="form-control" id="inputFirst" placeholder="John">
+            <label for="inputFirst" class="is-size-4">First Name</label>
+            <input type="text" class="form-control is-size-5" id="inputFirst" placeholder="John">
           </div>
-        </div>
 
-        <div class="form-row">
           <div class="form-group">
-            <label for="inputLast">Last Name</label>
-            <input type="text" class="form-control" id="inputLast" placeholder="Doe">
+            <label for="inputLast" class="is-size-4">Last Name</label>
+            <input type="text" class="form-control is-size-5" id="inputLast" placeholder="Doe">
           </div>
-        </div>
 
-        <div class="form-row">
           <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            <label for="inputEmail" class="is-size-4">Email</label>
+            <input type="email" class="form-control is-size-5" id="inputEmail" placeholder="Email">
           </div>
-        </div>
 
-        <div class="form-row">
           <div class="form-group">
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <label for="inputPassword" class="is-size-4">Password</label>
+            <input type="password" class="form-control is-size-5" id="inputPassword" placeholder="Password">
           </div>
-        </div>
 
         <div>
           <h2 id="message"></h2>
         </div>
 
-        <button type="submit" id="add-user" class="btn">Submit</button>
-      </form>
+        <button type="submit" id="add-user" class="button is-normal is-success">
+          Submit
+        </button>
     </div>
   </div>
 </div>

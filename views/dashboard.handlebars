@@ -1,11 +1,11 @@
 {{> nav/nav-block}}
 
-<div id="main-container">
+<div class="columns is-mobile">
 
-  <div class="jumbotron">
-    <h1>Welcome to Happy Trees</h1>
-    <h2>A helpful resource in viewing data collected on trees planted by Jordan's company.</h2>
-    <hr class="my-4">
+  <div class="jumbotron column">
+    <h1 class="is-size-1">Welcome to Happy Trees</h1>
+    <h2 class="is-size-4">A helpful resource in viewing data collected on trees planted by Jordan's company.</h2>
+    <hr>
 
     <div>
       {{#if isloggedin}}
@@ -19,21 +19,21 @@
 
   </div>
 
-  <div class="container">
+  <div class="container column">
 
-    <div class="upload">
-      <h2>UPLOAD TREE DATA:</h2>
+    <div class="upload column">
+      <h2 class="is-size-3">UPLOAD TREE DATA:</h2>
       <label for="tree-data" class="data-types">
         Plot ID <input type="text" class="input">
         Scientific Name<input type="text" class="input">
         Height<input type="text" class="input">
-        <button type="submit" class="submit">Submit
+        <button type="submit" class="button is-success is-normal">Submit
         </button>
       </label>
     </div>
 
-    <div class="view">
-      <h5>VIEW TREE DATA BY:</h5>
+    <div class="view column is-full">
+      <h2 class="is-size-4">VIEW TREE DATA BY:</h2>
       *dropdown menu created with js goes here*
     </div>
 
