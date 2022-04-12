@@ -1,21 +1,35 @@
 const fs = require('fs');
 const csv = require('fast-csv');
-const db = require('../config/config');
+const mysql = require('mysql')
+// const db = require('../models');
 
+// Database connection
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "password",
+    database: "happytrees"
+})
+db.connect(function (err) {
+    if (err) {
+        return console.error('error: ' + err.message);
+    }
+    console.log('Connected to the MySQL server.');
+})
 
 function UploadCsvDataToMySQL(filePath){
-    let stream = fs.createReadStream(filePath);
+    let stream = fs.createReadStream(`${filePath}`);
     let csvData = [];
     let csvStream = csv
-    console.log(csvStream)
-        .parse()
-        .on("data", function (data) {
-            csvData.push(data);
-            console.log(data)
-        })
-        .on("end", function () {
-            // Remove Header ROW
-            csvData.shift();
+    .parse()
+    .on("data", function (data) {
+        csvData.push(data);
+        //console.log(data)
+    })
+    .on("end", function () {
+        // Remove Header ROW
+        csvData.shift();
+
                 let query = 'INSERT INTO sites (Plot_ID, Scientific_Name, Performance_Standard_Approval, Planted_or_Volunteer, X_Coordinate, Y_Coordinate, MY0_Height, MY1_Height, MY2_Height, MY3_Height, MY4_Height, MY5_Height, MY6_Height, MY7_Height, MY8_Height, MY9_Height, MY10_Height, MY11_Height, MY12_Height, Map_ID) VALUES ?';
                     db.query(query, [csvData], (error, response) => {
                     console.log(error || response);
