@@ -1,5 +1,5 @@
-import { Loader } from "@googlemaps/js-api-loader";
-import MarkerClusterer from "@google/markerclustererplus";
+// import { Loader } from "@googlemaps/js-api-loader";
+// import MarkerClusterer from "@google/markerclustererplus";
 
 $("#add-user").on("click", function (event) {
   event.preventDefault();
