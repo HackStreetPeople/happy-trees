@@ -19,9 +19,9 @@ module.exports = (passport, db) => {
   router.delete('/examples/:id', AppController.deleteExample);
 
   // trees
-  router.get('/trees', AppController.getExamples);
-  router.post('/trees', AppController.createExample);
-  router.delete('/trees/:id', AppController.deleteExample);
+  router.get('/trees', AppController.getTree);
+  router.post('/trees', AppController.createTree);
+  router.delete('/trees/:id', AppController.deleteTree);
 
   return router;
 };

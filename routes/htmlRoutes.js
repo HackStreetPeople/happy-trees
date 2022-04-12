@@ -99,6 +99,21 @@ module.exports = (db) => {
     });
   });
 
+  router.get('/tree', function (req, res) {
+    if (req.isAuthenticated()) {
+      db.Tree.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbExamples) {
+        res.render('tree', {
+          userInfo: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          msg: 'Welcome!',
+          trees: dbExamples
+        });
+      });
+    } else {
+      res.redirect('/');
+    }
+  });
+
   // Render 404 page for any unmatched routes
   router.get('*', function (req, res) {
     res.render('404');
@@ -106,3 +121,5 @@ module.exports = (db) => {
 
   return router;
 };
+
+
