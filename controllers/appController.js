@@ -17,6 +17,28 @@ module.exports = function (db) {
       db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
         res.json(dbExample);
       });
+    },
+
+
+     // Get all examples
+     getTree: function (req, res) {
+      db.Tree.findAll({ where: { UserId: req.session.passport.user.id } }).then(function (dbExamples) {
+        res.json(dbExamples);
+      });
+    },
+    // Create a new example
+    createTree: function (req, res) {
+      db.Tree.create(req.body).then(function (dbExample) {
+        res.json(dbExample);
+      });
+    },
+    // Delete an example by id
+    deleteTree: function (req, res) {
+      db.Tree.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
+        res.json(dbExample);
+      });
+      
     }
+
   };
 };

@@ -1,32 +1,32 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<nav class="navbar is-dark">
   <!-- Brand/logo -->
-  <a class="navbar-brand" href="/">
-    AppName
+  <a class= "has-text-success-dark " href="/">
+    Homepage
   </a>
   
   <!-- Links -->
-  <ul class="nav navbar-nav ml-auto">
+  <ul>
 
     {{!-- <li class="nav-item">
       <a class="nav-link" href="/some-feature">Menu item here</a>
     </li> --}}
 
     {{#if isloggedin}}
-      <li class="nav-item">
-        <a class="nav-link" href="/example">Example page</a>
+      {{!-- <li>
+        <a href="/example">Example page</a>
+      </li> --}}
+      <li>
+        <a href="/profile">My Profile</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/profile">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
+      <li>
+        <a href="/logout">Logout</a>
       </li>
     {{else}}
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="login-modal">Login</a>
+      <li>
+        <a class="has-text-success-dark" href="#" id="login-modal">Login</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register" data-register={{register}}>Register</a>
+      <li>
+        <a class="has-text-success-dark" href="/register" data-register={{register}}>Register</a>
       </li>
     {{/if}}
   </ul>
