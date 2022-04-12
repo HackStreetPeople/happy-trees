@@ -11,6 +11,10 @@ const app = express();
 const db = require('./models');
 const bodyparser = require('body-parser')
 
+app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({
+    extended: true
+}))
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
