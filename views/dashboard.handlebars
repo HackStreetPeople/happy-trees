@@ -31,6 +31,13 @@
         </button>
       </label>
     </div>
+      <div>
+        <h1>upload csv file to MySQL database</h1>
+      <form action="/uploadfile" enctype="multipart/form-data" method="post">
+        <input type="file" name="uploadfile" accept='csv' >
+        <input type="submit" value="Upload CSV">
+      </form>  
+      </div>
 
     <div class="view column is-full">
       <h2 class="is-size-4">VIEW TREE DATA BY:</h2>

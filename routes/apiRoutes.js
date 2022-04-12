@@ -23,5 +23,7 @@ module.exports = (passport, db) => {
   router.post('/trees', AppController.createExample);
   router.delete('/trees/:id', AppController.deleteExample);
 
+  router.post('/uploadfile', AppController.getExcelFile);
+
   return router;
 };

@@ -37,8 +37,14 @@ module.exports = function (db) {
       db.Tree.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
         res.json(dbExample);
       });
-      
-    }
+    },
+    
+    // Get the excel file from the uploader
+    getExcelFile: function (req, res) {
+      db.sites.create(req.body).then(function (dbSites) {
+        res.json(dbSites);
+      });
+    },
 
   };
 };
