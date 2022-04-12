@@ -1,15 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
     const Tree = sequelize.define('Tree', {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-          },
+        
+      plotId: DataTypes.INTEGER,
       scientificName: DataTypes.STRING,
-      psa: DataTypes.TEXT,
-      planted: DataTypes.BOOLEAN,
-      volunteer: DataTypes.BOOLEAN
-      
+      height: DataTypes.STRING
     });
   
     Tree.associate = function (models) {
@@ -22,4 +16,6 @@ module.exports = function (sequelize, DataTypes) {
   
     return Tree;
   };
-  
+
+
+
