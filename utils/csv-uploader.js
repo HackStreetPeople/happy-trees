@@ -7,6 +7,7 @@ function UploadCsvDataToMySQL(filePath){
     let stream = fs.createReadStream(filePath);
     let csvData = [];
     let csvStream = csv
+    console.log(csvStream)
         .parse()
         .on("data", function (data) {
             csvData.push(data);
