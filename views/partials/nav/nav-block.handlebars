@@ -1,6 +1,6 @@
 <nav class="navbar is-dark">
   <!-- Brand/logo -->
-  <a class= "has-text-success-dark " href="/">
+  <a class= "homepage has-text-success-dark" href="/">
     Homepage
   </a>
   
@@ -16,17 +16,17 @@
         <a href="/example">Example page</a>
       </li> --}}
       <li>
-        <a href="/profile">My Profile</a>
+        <a class= "profile" href="/profile">My Profile</a>
       </li>
       <li>
-        <a href="/logout">Logout</a>
+        <a class="logout" href="/logout">Logout</a>
       </li>
     {{else}}
       <li>
-        <a class="has-text-success-dark" href="#" id="login-modal">Login</a>
+        <a class="login has-text-success-dark" href="#" id="login-modal">Login</a>
       </li>
       <li>
-        <a class="has-text-success-dark" href="/register" data-register={{register}}>Register</a>
+        <a class="register has-text-success-dark" href="/register" data-register={{register}}>Register</a>
       </li>
     {{/if}}
   </ul>
