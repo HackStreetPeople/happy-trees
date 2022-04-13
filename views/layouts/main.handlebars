@@ -12,18 +12,82 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-	
+	<style>
+        #map {
+        height: 200px;
+        width:900px;
+        }
+    </style>
 	<title>Project 2 Starter</title>
 </head>
 
-<body style="height:100%">
+<body>
 	{{{ body }}}
 	<h2>Google Maps Demo TEST</h2>
     <!--The div element for the map -->
-    <div id="map1" style="height:100px width: 150px"></div>
-	<div id="map2" style="height:100px width: 150px"></div>
-	<div id="map3" style="height:100px width: 150px"></div>
-	<div id="map4" style="height:100px width: 150px"></div>
+    <div id="map"></div>
+	
+<script>
+function initMap()
+{
+    let lenoir = {lat: 35.9140196, lng: -81.5389849};
+    let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: lenoir
+    });
+
+// ARRAY of multiple markers
+    let markers = [
+    {
+        coords: {lat: 36.529847, lng: -80.987143},
+        content: "<h3>Double H Mitigation Site</h3>"
+    },
+
+    {
+    coords: {lat: 35.350886, lng: -82.556899},
+    content: "<h3>Banner Farm Road Mitigation Site</h3>"
+    },
+
+    {
+    coords: {lat: 35.403670, lng: -81.351360},
+    content: "<h3>Oak Hill Dairy Mitigation Site</h3>"
+    },    
+
+    {
+    coords: {lat: 35.3662, lng: -83.8026},
+    content: "<h3>East Buffalo Creek Mitigation Site</h3>"
+    }
+];
+ 
+// Loop through markers
+for(let i = 0; i < markers.length; i++) {
+    // Add the marker w/ this
+    addMarker(markers[i]);
+}
+
+
+function addMarker(props){
+    let marker = new google.maps.Marker({
+        position: props.coords,
+        map: map 
+    });
+
+
+// Check the content
+if(props.content){
+    let infoWindow = new google.maps.InfoWindow({
+        content:props.content
+    });
+
+    marker.addListener("click", function(){
+        infoWindow.open(map, marker);
+    });
+    }
+}
+
+}
+
+</script>
 <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap">
 </script>
