@@ -9,7 +9,12 @@ const helmet = require('helmet');
 const PORT = process.env.PORT || 3333;
 const app = express();
 const db = require('./models');
+const bodyparser = require('body-parser')
 
+app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({
+    extended: true
+}))
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -27,6 +32,8 @@ require('./config/passport')(db, app, passport); // pass passport for configurat
 // Define our routes
 app.use('/api', require('./routes/apiRoutes')(passport, db));
 app.use(require('./routes/htmlRoutes')(db));
+//get trees from excel file
+app.use(require('./routes/siteRoutes')(db));
 
 // Secure express app
 app.use(helmet.hsts({
