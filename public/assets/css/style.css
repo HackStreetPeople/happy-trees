@@ -5,8 +5,8 @@ body {
   /* font-family:cursive; */
 }
 
-.navbar {
-  /* background-color: slategray; */
+/* .navbar {
+  background-color: slategray;
   border-style: ridge;
   border-width: 5px;
   border-color: black;
@@ -15,7 +15,7 @@ body {
   align-items:center;
   display:flex;
   flex-direction: row;
-}
+} */
 
 /* .navlinks {
  text-align:center;
@@ -40,7 +40,7 @@ body {
   text-align: center;
 } */
 
-.upload, .view, .register, .login{
+.navbar, .upload, .view, .register, .login{
   background-color: slategray;
   color:darkgreen;
   border-color: black;
@@ -53,6 +53,7 @@ body {
   text-align: center;
   font-family: cursive;
   font-weight: bold;
+  margin: auto;
 }
 
 .data-types {
