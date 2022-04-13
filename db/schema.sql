@@ -1,5 +1,5 @@
-drop database if exists project2_dev;
-create database project2_dev;
+drop database if exists happytrees;
+create database happytrees;
 
 DROP TABLE IF EXISTS sites; 
 
