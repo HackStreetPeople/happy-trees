@@ -75,9 +75,22 @@ hr {
 }
 
 /* Set the size of the div element that contains the Google map */
-#map {
-  height: 700px;
-  /* The height is 700 pixels */
-  width: 700px;
-  /* The width is 700 pixels */
+#map1 {
+  height: 30%;
+  width: 30%;
+}
+
+#map2 {
+  height: 30%;
+  width: 30%;
+}
+
+#map3 {
+  height: 30%;
+  width: 30%;
+}
+
+#map4 {
+  height: 30%;
+  width: 30%;
 }

@@ -60,27 +60,33 @@ db.sequelize.sync(syncOptions).then(() => {
   // Map crap start
 
   const apiOptions = {
-    apiKey: "MAP_API_KEY",
-    // apiKey: "AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU",
+    // apiKey: "MAP_API_KEY",
+    apiKey: "AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU",
   };
 
-  const loader = new Loader(apiOptions);
-  console.log("YOUR LOADER IS NOT DEFINED");
+  // map = new google.maps.Map(document.getElementById("map1"), { ...});
+  // map = new google.maps.Map(document.getElementById("map2"), {...});
+  // map = new google.maps.Map(document.getElementById("map3"), {...});
+  // map = new google.maps.Map(document.getElementById("map4"), {...});
 
-  loader.load().then(() => {
-    console.log("Maps JS API loaded");
-    const map = displayMap();
-    const markers = addMarkers(map);
-    clusterMarkers(map, markers);
-    addPanToMarker(map, markers);
-  });
+  // const loader = new Loader(apiOptions);
+  // console.log("YOUR LOADER IS NOT DEFINED");
 
-  function displayMap() {
+  // loader.load().then(() => {
+  //   console.log("Maps JS API loaded");
+  //   const map = displayMap();
+  //   const markers = addMarkers(map);
+  //   clusterMarkers(map, markers);
+  //   addPanToMarker(map, markers);
+  // });
+
+  function displayMap1() {
     const mapOptions = {
       // The map, centered at Banner Farm Mitigation Site
       center: { lat: 35.350886, lng: -82.556899 },
-      zoom: 10,
+      zoom: 15,
       mapId: "map1",
+      mapTypeId: "terrain",
     };
     const mapDiv = document.getElementById("map");
     return new google.maps.Map(mapDiv, mapOptions);
@@ -90,8 +96,9 @@ db.sequelize.sync(syncOptions).then(() => {
     const mapOptions = {
       // The map, centered at East Buffalo Mitigation Site
       center: { lat: 35.3662, lng: -83.8026 },
-      zoom: 10,
+      zoom: 15,
       mapId: "map2",
+      mapTypeId: "terrain",
     };
     const mapDiv = document.getElementById("map");
     return new google.maps.Map(mapDiv, mapOptions);
@@ -101,8 +108,9 @@ db.sequelize.sync(syncOptions).then(() => {
     const mapOptions = {
       // The map, centered at Oak Hill Dairy Mitigation Site
       center: { lat: 35.40367, lng: -81.35136 },
-      zoom: 10,
+      zoom: 15,
       mapId: "map3",
+      mapTypeId: "terrain",
     };
     const mapDiv = document.getElementById("map");
     return new google.maps.Map(mapDiv, mapOptions);
@@ -112,8 +120,9 @@ db.sequelize.sync(syncOptions).then(() => {
     const mapOptions = {
       // The map, centered at Double H Mitigation Site
       center: { lat: 36.529847, lng: -80.987143 },
-      zoom: 10,
+      zoom: 15,
       mapId: "map4",
+      mapTypeId: "terrain",
     };
     const mapDiv = document.getElementById("map");
     return new google.maps.Map(mapDiv, mapOptions);
