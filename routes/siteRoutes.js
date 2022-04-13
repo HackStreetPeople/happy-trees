@@ -2,7 +2,7 @@ const router = require('express').Router();
 const UploadCsvDataToMySQL = require("../utils/csv-uploader")
 const multer = require('multer')
 const path = require('path')
-
+// use multer to handle the csv file.
 const storage = multer.diskStorage({
     destination: (req, file, callBack) => {
         callBack(null, './uploads/')    
@@ -23,6 +23,6 @@ module.exports = (db) => {
         UploadCsvDataToMySQL('uploads/' + req.file.filename, db);
         console.log('CSV file data has been uploaded in mysql database ');
     });
-    
+
     return router;
 }
