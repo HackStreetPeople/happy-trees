@@ -38,25 +38,17 @@ function initMap()
 
 // ARRAY of multiple markers
     let markers = [
-    {
-        coords: {lat: 36.529847, lng: -80.987143},
-        content: "<h3>Double H Mitigation Site</h3>"
-    },
+    { coords: {lat: 36.529847, lng: -80.987143},
+    content: "<h3>Double H Mitigation Site</h3>" },
 
-    {
-    coords: {lat: 35.350886, lng: -82.556899},
-    content: "<h3>Banner Farm Road Mitigation Site</h3>"
-    },
+    { coords: {lat: 35.350886, lng: -82.556899},
+    content: "<h3>Banner Farm Road Mitigation Site</h3>" },
 
-    {
-    coords: {lat: 35.403670, lng: -81.351360},
-    content: "<h3>Oak Hill Dairy Mitigation Site</h3>"
-    },    
+    { coords: {lat: 35.403670, lng: -81.351360},
+    content: "<h3>Oak Hill Dairy Mitigation Site</h3>" },    
 
-    {
-    coords: {lat: 35.3662, lng: -83.8026},
-    content: "<h3>East Buffalo Creek Mitigation Site</h3>"
-    }
+    { coords: {lat: 35.3662, lng: -83.8026},
+    content: "<h3>East Buffalo Creek Mitigation Site</h3>" }
 ];
  
 // Loop through markers
@@ -65,16 +57,14 @@ for(let i = 0; i < markers.length; i++) {
     addMarker(markers[i]);
 }
 
-
 function addMarker(props){
     let marker = new google.maps.Marker({
         position: props.coords,
         map: map 
     });
 
-
 // Check the content
-if(props.content){
+	if(props.content){
     let infoWindow = new google.maps.InfoWindow({
         content:props.content
     });
