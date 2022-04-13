@@ -1,7 +1,7 @@
 body {
   background-image: url("../images/trees.jpeg");
-  /* background-size: cover; */
-  /* height:100vh; */
+  background-size: cover;
+  height:100vh;
   /* font-family:cursive; */
 }
 
@@ -12,7 +12,14 @@ body {
   border-color: black;
   text-align: right;
   font-family: cursive;
+  align-items:center;
+  display:flex;
+  flex-direction: row;
 }
+
+/* .navlinks {
+ text-align:center;
+} */
 
 .jumbotron{
   margin: auto;
@@ -33,7 +40,7 @@ body {
   text-align: center;
 } */
 
-.upload, .view, .register{
+.upload, .view, .register, .login{
   background-color: slategray;
   color:darkgreen;
   border-color: black;
