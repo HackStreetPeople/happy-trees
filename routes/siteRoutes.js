@@ -24,6 +24,8 @@ module.exports = (db) => {
     router.post('/uploadfile', upload.single("uploadfile"), (req, res) =>{
         UploadCsvDataToMySQL('uploads/' + req.file.filename, db);
         console.log('CSV file data has been uploaded in mysql database ');
+
+        res.send(200)
     });
 
     //router.get('/downloads', downloadTree.downloads)
