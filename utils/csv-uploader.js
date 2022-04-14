@@ -33,6 +33,13 @@ function UploadCsvDataToMySQL(filePath){
                 let query = 'INSERT INTO sites (Plot_ID, Scientific_Name, Performance_Standard_Approval, Planted_or_Volunteer, X_Coordinate, Y_Coordinate, MY0_Height, MY1_Height, MY2_Height, MY3_Height, MY4_Height, MY5_Height, MY6_Height, MY7_Height, MY8_Height, MY9_Height, MY10_Height, MY11_Height, MY12_Height, Map_ID) VALUES ?';
                     db.query(query, [csvData], (error, response) => {
                     console.log(error || response);
+
+                    db.end(err => {
+                        if (err) {
+                            console.log('ERR CLOSING SQL CONNECTION')
+                        }
+                        console.log('CONNECTION CLOSED')
+                      });
                 }); 
                     
             // delete file after saving to MySQL database
