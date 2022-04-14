@@ -3,13 +3,19 @@ const csv = require('fast-csv');
 const mysql = require('mysql')
 // const db = require('../models');
 
-// Database connection
-const db = mysql.createConnection({
+const sqlConfig = process.env.NODE_ENV === 'development' ? {
     host: "localhost",
     user: "root",
     password: "password",
     database: "happytrees"
-})
+} : {
+    host: process.env.SEQUELIZE_HOST,
+    user: process.env.SEQUELIZE_USER,
+    password: process.env.SEQUELIZE_PASSWORD,
+    database: process.env.SEQUELIZE_DB
+}
+// Database connection
+const db = mysql.createConnection(sqlConfig)
 db.connect(function (err) {
     if (err) {
         return console.error('error: ' + err.message);
