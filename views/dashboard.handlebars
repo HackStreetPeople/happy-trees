@@ -26,7 +26,7 @@
 
       <div class="view">
         <h2 class="has-text-black is-size-3">View Tree Data:</h2>
-        <button class="button is-black has-text-white is-size-5" onclick="getTrees()">Get Trees</button>
+        <button class="button is-black has-text-white is-size-5" id="getTrees">Get Trees</button>
       </div>
     </div>
 
@@ -41,4 +41,12 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
       </script>
+
+    <script>
+      const getTreesButton = document.getElementById('getTrees')
+
+      getTreesButton.addEventListener('click', () => {
+        getTrees()
+      })
+    </script>
   </div>
