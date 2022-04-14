@@ -15,30 +15,58 @@
             <input type="text" id="scientific-name" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
           </div>
            <div class="form-group">
-            <label for="height">Height</label>
+            <label for="height">MY0_Height</label>
             <input type="text" id="height" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+
+           <div class="form-group">
+            <label for="psa">Performance Standard Approval</label>
+            <input type="text" id="psa" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div>
+
+           <div class="form-group">
+            <label for="pov">Planted or volunteer</label>
+            <input type="text" id="pov" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div>
+
+           <div class="form-group">
+            <label for="x-coord">X_Coordinate</label>
+            <input type="text" id="x-coord" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div>
+
+           <div class="form-group">
+            <label for="y-coord">Y_Coordinate</label>
+            <input type="text" id="y-coord" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div>
+
+           <div class="form-group">
+            <label for="mapId">Map_ID</label>
+            <input type="text" id="mapId" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div>
+
+          {{!-- <button id="submit" class="btn btn-primary float-right">Submit</button> --}}
+          <button id="submit" class="button is-primary">Submit</button>
+
         </form>
         <h4>Examples belong to this user:</h4>
         <div class="ui-widget">
-        <input id="tags" type="text">
+        <input id="tags" type="text"> 
         </div>
-        {{!-- <ul id="example-list" class="list-group">
-          {{#each examples}}
+        <ul id="tree-list" class="list-group">
+          {{#each trees}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
+            <a href="tree/{{this.id}}">{{this.Scientific_Name}}</a>
+            <button class="btn is-primary btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
-        </ul> --}}
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
-{{!-- <script src="/assets/js/tree.js"></script> --}}
-<script src="/assets/js/search.js"></script>
+<script src="/assets/js/tree.js"></script>
+{{!-- <script src="/assets/js/search.js"></script> --}}
 
 {{> modal/login-block}}
 
