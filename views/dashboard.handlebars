@@ -1,10 +1,11 @@
 {{> nav/nav-block}}
+{{!-- <script src="/models/getTrees.js"></script> --}}
 
 <div class="container">
 
   <div class="jumbotron">
     <h1 class="has-text-black is-size-1">Welcome to Happy Trees</h1>
-    <h2 class="is-size-4">A helpful resource in viewing data collected on trees planted by Jordan's company.</h2>
+    <h2 class="is-size-4">A helpful resource in viewing data collected on trees planted by Mitigation Company.</h2>
     <hr>
     <div>
       {{#if isloggedin}}
@@ -27,10 +28,12 @@
     </div>
 
     <div class="view">
-      <h2 class="has-text-black is-size-4">VIEW TREE DATA BY:</h2>
-      *dropdown menu created with js goes here??*
+      <h2 class="has-text-black is-size-4">View Tree Data:</h2>
+  <button onclick="getTrees()">Get Trees</button>
+      
     </div>
   </div>
 </div>
+
 {{!--
 {{>modal/login-block}} --}}
