@@ -46,5 +46,11 @@ module.exports = function (db) {
       });
     },
 
+    getTrees: function (req, res) {
+      db.sites.post(req.body).then(function (dbSites) {
+        res.json(dbSites);
+      });
+    },
+
   };
 };

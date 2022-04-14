@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const UploadCsvDataToMySQL = require("../utils/csv-uploader")
+//const downloadTree = require("../utils/csv-downloader")
 const multer = require('multer')
 const path = require('path')
 
@@ -24,6 +25,8 @@ module.exports = (db) => {
         UploadCsvDataToMySQL('uploads/' + req.file.filename, db);
         console.log('CSV file data has been uploaded in mysql database ');
     });
+
+    //router.get('/downloads', downloadTree.downloads)
 
     return router;
 }
