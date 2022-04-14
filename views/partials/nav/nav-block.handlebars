@@ -1,39 +1,27 @@
 <nav class="navbar">
-  <!-- Brand/logo -->
-  {{!-- <a class="has-text-success-dark" href="/">
-    Homepage
-  </a> --}}
 
-  <!-- Links -->
   <ul class="navlinks">
 
-    {{!-- <li class="nav-item">
-      <a class="nav-link" href="/some-feature">Menu item here</a>
-    </li> --}}
-
-    <a class="has-text-success-dark" href="/">
+    <a class="link has-text-black is-size-3" href="/">
       Homepage
     </a>
 
     {{#if isloggedin}}
-    {{!-- <li>
-      <a href="/example">Example page</a>
-    </li> --}}
     <li>
-      <a class="has-text-success-dark" href="/profile">My Profile</a>
+      <a class="link has-text-white is-size-3" href="/profile">My Profile</a>
     </li>
     <li>
-      <a class="has-text-success-dark" href="/logout">Logout</a>
+      <a class="link has-text-white is-size-3" href="/logout">Logout</a>
     </li>
 
     {{else}}
     <li>
 
 {{!-- i cant get the path for login to work here --}}
-      <a class="has-text-success-dark" href="../modal/login-block.handlebars" data-login={{login}}>Login</a>
+      <a class="link has-text-white is-size-3" href="/login" data-login={{login}}>Login</a>
     </li>
     <li>
-      <a class="has-text-success-dark" href="/register" data-register={{register}}>Register</a>
+      <a class="link has-text-white is-size-3" href="/register" data-register={{register}}>Register</a>
     </li>
 
     {{/if}}
