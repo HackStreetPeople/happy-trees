@@ -47,9 +47,16 @@ module.exports = function (db) {
     },
 
     getTrees: function (req, res) {
+      console.log('trees')
       db.sites.post(req.body).then(function (dbSites) {
         res.json(dbSites);
       });
+    },
+
+    getTrees2: async (req, res) => {
+      const treeSites = await db.sites.findAll()
+      
+      res.json(treeSites)
     },
 
   };
