@@ -19,8 +19,11 @@
       <div class="upload">
         <h1 class="has-text-black is-size-3">Upload CSV file with tree Data into database</h1>
         <form action="/uploadfile" enctype="multipart/form-data" method="post">
-          <input type="file" name="uploadfile" accept='csv'>
-          <input type="submit" value="Upload CSV">
+          <label for="file-upload" class="button is-black has-text-white is-size-6">
+            <input id="file-upload" type="file" name="uploadfile" accept='csv'>
+            Upload File
+          </label>
+          <input class="button is-black has-text-white is-size-6" type="submit" value="Upload CSV">
         </form>
       </div>
 
@@ -34,28 +37,40 @@
   </div>
 
   <div class="map has-text-black is-size-3">
-    <h2>My Google Maps Demo Featuring the Double Crown</h2>
+    <h2>Mitigation Site Locations</h2>
     <!--The div element for the map -->
-    <div id="map">
+    <div id="map"> 
+      <img src="../public/assets/images/map.png" alt="map of mitigation sites" width="900" height="200">
     </div>
     <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
       </script>
+    <script>
+      const getTreesButton = document.getElementById('getTrees')
 
-      <script>
-        const getTreesButton = document.getElementById('getTrees')
+      getTreesButton.addEventListener('click', () => {
+        console.log('get trees')
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-        getTreesButton.addEventListener('click', () => {
-          console.log('get trees')
-          var myHeaders = new Headers();
-          myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
+          method: 'GET',
+          headers: myHeaders,
+          redirect: 'follow'
+        };
 
-          var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-          };
+        fetch("/api/trees2", requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log('TREES ', result)
+            result.map(tree => {
+              const treedata = document.getElementById('treedata')
+              const paragraph = document.createElement('p')
+              paragraph.textContent = tree.Scientific_Name
+
+
+              treedata.appendChild(paragraph)
 
           fetch("/api/trees2", requestOptions)
             .then(response => response.json())
@@ -83,8 +98,3 @@
                 treedata.appendChild(paragraph5)
                 treedata.appendChild(paragraph6)
               })
-            })
-            .catch(error => console.log('error', error));
-        })
-      </script>
-  </div>
