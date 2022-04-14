@@ -24,38 +24,42 @@ body {
 
 .navlinks {
 display: flex;
+flex-wrap: wrap;
 flex-direction: row;
 width: 100%;
-justify-content: space-between;
+justify-content: space-around;
 text-align: center;
 color: white;
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-}
-
-.upload-view {
+  margin: 75px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
+/* .upload-view {
+  display: flex;
+  flex-direction: column;
+} */
+
 .jumbotron{
-  margin: auto;
+  /* display: flex; */
+  /* margin: auto; */
   background-color: slategray;
   color:white;
   border-color: black;
   border-style: ridge;
   border-width: 5px;
   padding: 10px;
-  /* height:100%; */
-  /* margin-top: 20px; */
   text-align: center;
   font-weight: bold;
 }
 
 .upload, .view, .register, .login{
+  /* display: flex;
+  flex-wrap: wrap; */
   background-color: slategray;
   color:white;
   border-color: black;
@@ -64,29 +68,11 @@ color: white;
   padding: 10px;
   text-align: center;
   font-weight: bold;
-  /* margin: auto; */
-}
-
-.register {
+  margin: auto;
   margin: 20px;
 }
 
-.upload {
-  margin:20px;
-}
-
-.view {
-  margin:20px;
-}
-
-/* .data-types {
-  color: black;
-  font-size: 20px;
-} */
-
-.button {
-  border-style: ridge;
-  border-color: black;
-  border-width:5px;
-  margin: 10px;
+.register {
+  margin-left: 25%;
+  margin-right: 25%;
 }
