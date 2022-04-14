@@ -5,59 +5,27 @@ body {
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 15px;
-  margin-left: 15px;
-  background-color: slategray;
-  color:white;
-  font-weight: bold;
-  border-color: black;
-  border-style: ridge;
-  border-width: 5px;
-  padding: 10px;
-}
-
 .navlinks {
 display: flex;
-flex-wrap: wrap;
-flex-direction: row;
+flex-direction: column;
 width: 100%;
 justify-content: space-around;
 text-align: center;
-color: white;
 }
 
 .container {
-  margin: 75px;
+  /* margin: 75px; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-/* .upload-view {
+.header {
   display: flex;
-  flex-direction: column;
-} */
-
-.jumbotron{
-  /* display: flex; */
-  /* margin: auto; */
-  background-color: slategray;
-  color:white;
-  border-color: black;
-  border-style: ridge;
-  border-width: 5px;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.upload, .view, .register, .login{
-  /* display: flex;
-  flex-wrap: wrap; */
+.navbar, .login, .upload, .view, .map{
   background-color: slategray;
   color:white;
   border-color: black;
@@ -66,11 +34,20 @@ color: white;
   padding: 10px;
   text-align: center;
   font-weight: bold;
-  margin: auto;
-  margin: 20px;
+  margin: 10px;
 }
 
 .register {
+  display: flex;
+  flex-direction: column;
+  background-color: slategray;
+  color:white;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
   margin-left: 25%;
   margin-right: 25%;
 }

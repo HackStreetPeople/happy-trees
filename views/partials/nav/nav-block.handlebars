@@ -1,31 +1,23 @@
 <nav class="navbar">
 
-  <ul class="navlinks">
-
-    <a class="link has-text-black is-size-3" href="/">
-      Homepage
-    </a>
-
-    {{#if isloggedin}}
-    <li>
-      <a class="link has-text-white is-size-3" href="/profile">My Profile</a>
-    </li>
+  <div class="navlinks">
+      <a class="link has-text-black is-size-2 is-underlined" href="/">Happy Trees</a>
+      <h2 class="is-size-4">A helpful resource in viewing data collected on trees planted by Mitigation Company.</h2>
+    {{!-- {{#if isloggedin}}
     <li>
       <a class="link has-text-white is-size-3" href="/logout">Logout</a>
-    </li>
+    </li> --}}
 
-    {{else}}
-    <li>
-
-{{!-- i cant get the path for login to work here --}}
-      <a class="link has-text-white is-size-3" href="/login" data-login={{login}}>Login</a>
-    </li>
-    <li>
+    {{!-- {{else}} --}}
+    {{!-- <li>
+      <a class="link has-text-white is-size-3" href="/login" data-login={{login-block}}>Login</a>
+    </li> --}}
+    {{!-- <li>
       <a class="link has-text-white is-size-3" href="/register" data-register={{register}}>Register</a>
-    </li>
+    </li> --}}
 
-    {{/if}}
-  </ul>
+    {{!-- {{/if}} --}}
+  </div>
 </nav>
 
 {{!-- {{>modal/login-block}} --}}
