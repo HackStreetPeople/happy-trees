@@ -27,6 +27,7 @@
       <div class="view">
         <h2 class="has-text-black is-size-3">View Tree Data:</h2>
         <button class="button is-black has-text-white is-size-5" id="getTrees">Get Trees</button>
+        <div id="treedata"></div>
       </div>
     </div>
 
@@ -42,11 +43,33 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
       </script>
 
-    <script>
-      const getTreesButton = document.getElementById('getTrees')
+      <script>
+        const getTreesButton = document.getElementById('getTrees')
 
-      getTreesButton.addEventListener('click', () => {
-        getTrees()
-      })
-    </script>
+        getTreesButton.addEventListener('click', () => {
+          console.log('get trees')
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+
+          var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+          };
+
+          fetch("/api/treesadam", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+              console.log('TREES ', result)
+              result.map(tree => {
+                const treedata = document.getElementById('treedata')
+                const paragraph = document.createElement('p')
+                paragraph.textContent = tree.Scientific_Name
+
+                treedata.appendChild(paragraph)
+              })
+            })
+            .catch(error => console.log('error', error));
+        })
+      </script>
   </div>
