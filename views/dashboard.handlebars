@@ -1,39 +1,44 @@
-{{> nav/nav-block}}
-{{!-- <script src="/models/getTrees.js"></script> --}}
-
 <div class="container">
+  {{!-- nav-block link needs to be inside div to be included in the styling --}}
+  {{> nav/nav-block}}
 
-  <div class="jumbotron">
-    <h1 class="has-text-black is-size-1">Welcome to Happy Trees</h1>
-    <h2 class="is-size-4">A helpful resource in viewing data collected on trees planted by Mitigation Company.</h2>
-    <hr>
-    <div>
+  <div class="header">
+
+    <div class="login">
       {{#if isloggedin}}
       You are logged in as {{user.firstName}}
       <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
       {{else}}
-      <p>You need to log in to use this app.</p>
+      {{>modal/login-block}}
       {{/if}}
       <h5 id="login-err-msg"></h5>
     </div>
-  </div>
 
-  <div class="upload-view">
-    <div class="upload has-text-black">
-      <h1 class="is-size-3">Upload CSV file to MySQL database</h1>
-      <form action="/uploadfile" enctype="multipart/form-data" method="post">
-        <input type="file" name="uploadfile" accept='csv'>
-        <input type="submit" value="Upload CSV">
-      </form>
+    <div class="tree-data">
+
+      <div class="upload">
+        <h1 class="has-text-black is-size-3">Upload CSV file to MySQL database</h1>
+        <form action="/uploadfile" enctype="multipart/form-data" method="post">
+          <input type="file" name="uploadfile" accept='csv'>
+          <input type="submit" value="Upload CSV">
+        </form>
+      </div>
+
+      <div class="view">
+        <h2 class="has-text-black is-size-3">View Tree Data:</h2>
+        <button class="button is-black has-text-white is-size-5" onclick="getTrees()">Get Trees</button>
+      </div>
     </div>
 
-    <div class="view">
-      <h2 class="has-text-black is-size-4">View Tree Data:</h2>
-  <button onclick="getTrees()">Get Trees</button>
-      
-    </div>
   </div>
-</div>
 
-{{!--
-{{>modal/login-block}} --}}
+  <div class="map has-text-black is-size-3">
+    <h2>My Google Maps Demo Featuring the Double Crown</h2>
+    <!--The div element for the map -->
+    <div id="map">
+    </div>
+    <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
+      </script>
+  </div>

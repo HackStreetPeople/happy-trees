@@ -1,66 +1,33 @@
-{{> nav/nav-block user=true login=true}}
-
-<div class="login">
+{{!-- uncommenting the below nav/nav-block line will create a second nav-block on the page --}}
+{{!-- {{> nav/nav-block user=true login=true}} --}}
+<div>
   <header align="center">
-    <h1 class="is-size-2">Login To Your Account</h1>
+    <h1 class="has-text-black is-size-2">Login To Your Account or <a class="link has-text-black is-underlined is-size-2"
+        href="/register" data-register={{register}}>Register</a></h1>
     <h3 id="create-err-msg"></h3>
   </header>
-
+  {{!-- do we need both of these err msg on line 6 & 9? --}}
   <h3 id="err-msg"></h3>
 
-  <div class="form-group">
-    <label for="inputEmail" class="is-size-4">Email</label>
-    <input type="email" class="form-control is-size-5" id="inputEmail" placeholder="Email">
-  </div>
+  {{!-- <div class="login-input"> --}}
 
-  <div class="form-group">
-    <label for="inputPassword" class="is-size-4">Password</label>
-    <input type="password" class="form-control is-size-5" id="inputPassword" placeholder="Password">
-  </div>
+    <div class="form-group">
+      <label for="inputEmail" class="is-size-3">Email</label>
+      <input type="email" class="form-control is-size-5" id="inputEmail" placeholder="Email">
+    {{!-- </div> --}}
 
-  <div>
-    <h2 id="message"></h2>
-  </div>
-  <div>
-    <button id="login" type="button" class="btn btn-primary">Login</button>
-    <button type="button" class="btn btn-secondary">Close</button>
-  </div>
-  {{!-- <button type="submit" id="add-user" class="button is-normal is-success">
-    Submit
-  </button> --}}
-</div>
-</div>
-</div>
+    {{!-- <div class="form-group"> --}}
+      <label for="inputPassword" class="is-size-3">Password</label>
+      <input type="password" class="form-control is-size-5" id="inputPassword" placeholder="Password">
+    {{!-- </div> --}}
 
-
-
-{{!-- <div id="user-info" tabindex="-1" role="dialog">
-  <div role="document">
     <div>
-      <div>
-        <h5>Credentials</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div>
-        <form>
-          <div class="form-group">
-            <label for="inputAccount">Email</label>
-            <input type="text" class="form-control" id="email">
-          </div>
-          <div class="form-group">
-            <label for="inputAccount">Password</label>
-            <input type="password" class="form-control" id="user_password">
-          </div>
-        </form>
-      </div>
-
-      <div>
-        <button id="login" type="button" class="btn btn-primary">Login</button>
-        <button type="button" class="btn btn-secondary" Close</button>
-      </div>
+      <h2 id="message"></h2>
     </div>
-  </div>
-</div> --}}
+    {{!-- <div> --}}
+      <button id="login" type="button" class="button is-black has-text-white is-size-5">Login</button>
+    </div>
+
+  {{!-- </div> --}}
+
+</div>
