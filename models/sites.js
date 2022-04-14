@@ -1,4 +1,4 @@
-
+// create plant data table
 
 module.exports = function (sequelize, DataTypes) {
     const sites = sequelize.define('sites', {
