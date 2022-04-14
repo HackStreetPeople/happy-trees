@@ -1,12 +1,11 @@
 {{> nav/nav-block}}
 
-<div class="columns is-mobile">
+<div class="container">
 
-  <div class="jumbotron column">
-    <h1 class="is-size-1">Welcome to Happy Trees</h1>
+  <div class="jumbotron">
+    <h1 class="has-text-black is-size-1">Welcome to Happy Trees</h1>
     <h2 class="is-size-4">A helpful resource in viewing data collected on trees planted by Jordan's company.</h2>
     <hr>
-
     <div>
       {{#if isloggedin}}
       You are logged in as {{user.firstName}}
@@ -16,36 +15,22 @@
       {{/if}}
       <h5 id="login-err-msg"></h5>
     </div>
-
   </div>
 
-  <div class="container column">
-
-    <div class="upload column">
-      <h2 class="is-size-3">UPLOAD TREE DATA:</h2>
-      <label for="tree-data" class="data-types">
-        Plot ID <input type="text" class="input">
-        Scientific Name<input type="text" class="input">
-        Height<input type="text" class="input">
-        <button type="submit" class="button is-success is-normal">Submit
-        </button>
-      </label>
-    </div>
-      <div>
-        <h1>upload csv file to MySQL database</h1>
+  <div class="upload-view">
+    <div class="upload has-text-black">
+      <h1 class="is-size-3">Upload CSV file to MySQL database</h1>
       <form action="/uploadfile" enctype="multipart/form-data" method="post">
-        <input type="file" name="uploadfile" accept='csv' >
+        <input type="file" name="uploadfile" accept='csv'>
         <input type="submit" value="Upload CSV">
-      </form>  
-      </div>
-
-    <div class="view column is-full">
-      <h2 class="is-size-4">VIEW TREE DATA BY:</h2>
-      *dropdown menu created with js goes here*
+      </form>
     </div>
 
+    <div class="view">
+      <h2 class="has-text-black is-size-4">VIEW TREE DATA BY:</h2>
+      *dropdown menu created with js goes here??*
+    </div>
   </div>
-
 </div>
-
-{{> modal/login-block}}
+{{!--
+{{>modal/login-block}} --}}
