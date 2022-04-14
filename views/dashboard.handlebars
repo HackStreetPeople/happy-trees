@@ -64,9 +64,24 @@
               result.map(tree => {
                 const treedata = document.getElementById('treedata')
                 const paragraph = document.createElement('p')
-                paragraph.textContent = tree.Scientific_Name
+                const paragraph2 = document.createElement('p')
+                const paragraph3 = document.createElement('p')
+                const paragraph4 = document.createElement('p')
+                const paragraph5 = document.createElement('p')
+                const paragraph6 = document.createElement('p')
+                paragraph.textContent = `Plant species: ${tree.Scientific_Name}`
+                paragraph2.textContent = `Plot ID: ${tree.Plot_ID}`
+                paragraph3.textContent = `Initial height: ${tree.MY0_Height}`
+                paragraph4.textContent = `Planted/Volunteer: ${tree.Planted_or_Volunteer}`
+                paragraph5.textContent = `Approval plan: ${tree.Performance_Standard_Approval}`
+                paragraph6.textContent = "---------"
 
                 treedata.appendChild(paragraph)
+                treedata.appendChild(paragraph2)
+                treedata.appendChild(paragraph3)
+                treedata.appendChild(paragraph4)
+                treedata.appendChild(paragraph5)
+                treedata.appendChild(paragraph6)
               })
             })
             .catch(error => console.log('error', error));
