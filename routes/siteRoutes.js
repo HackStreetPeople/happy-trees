@@ -25,7 +25,7 @@ module.exports = (db) => {
         UploadCsvDataToMySQL('uploads/' + req.file.filename, db);
         console.log('CSV file data has been uploaded in mysql database ');
 
-        res.send(200)
+        res.redirect('/')
     });
 
     //router.get('/downloads', downloadTree.downloads)
