@@ -20,7 +20,7 @@
         <h1 class="has-text-black is-size-3">Upload CSV file to MySQL database</h1>
         <form action="/uploadfile" enctype="multipart/form-data" method="post">
           <input type="file" name="uploadfile" accept='csv'>
-          <input type="submit" value="Upload CSV">
+          <input class="button is-black has-text-white is-size-6" type="submit" value="Upload CSV">
         </form>
       </div>
 
@@ -33,12 +33,12 @@
   </div>
 
   <div class="map has-text-black is-size-3">
-    <h2>My Google Maps Demo Featuring the Double Crown</h2>
+    <h2>Mitigation Site Locations</h2>
     <!--The div element for the map -->
-    <div id="map">
-    </div>
+    <div id="map"> </div>
     <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script async defer
+    <script async defer 
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
       </script>
   </div>
+  

@@ -51,3 +51,8 @@ text-align: center;
   margin-left: 25%;
   margin-right: 25%;
 }
+
+#map {
+  height: 200px;
+  width:900px;
+  }
