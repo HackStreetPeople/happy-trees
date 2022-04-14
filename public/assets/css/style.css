@@ -1,3 +1,5 @@
+@import 'bulma_npm.css';
+
 body {
   background-image: url("../images/trees.jpeg");
   background-size: cover;

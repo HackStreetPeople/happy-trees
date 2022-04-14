@@ -1,0 +1,38 @@
+{{> nav/nav-block}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Tree</h5>
+          <p>
+            <strong>PlotID</strong>: {{tree.Plot_ID}}</p>
+          <p>
+          <p>
+            <strong>Scientific Name</strong>: {{tree.Scientific_Name}}</p>
+          <p>
+              <p>
+            <strong>MY0 Height</strong>: {{tree.MY0_Height}}</p>
+          <p>
+              <p>
+            <strong>PSA</strong>: {{tree.Performance_Standard_Approval}}</p>
+          <p>
+              <p>
+            <strong>Plant or volunteer</strong>: {{tree.Planted_or_Volunteer}}</p>
+          <p>
+              <p>
+            <strong>X_Coordinate</strong>: {{tree.X_Coordinate}}</p>
+          <p>
+            <p>
+            <strong>Y_Coordinate</strong>: {{tree.Y_Coordinate}}</p>
+          <p>
+            <strong>MapID</strong> {{tree.Map_ID}}</p>
+            <a href="/tree">← Back To Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> modal/login-block}}

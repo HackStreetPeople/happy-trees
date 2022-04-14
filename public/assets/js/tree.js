@@ -7,6 +7,7 @@ const $xCoord = $('#x-coord');
 const $yCoord = $('#y-coord');
 const $mapId = $('#mapId');
 const $height = $('#height');
+const $treeList = $('#tree-list');
 
 
 const API = {
@@ -57,7 +58,7 @@ const handleFormSubmit = function (event) {
   }
 
   API.saveTree(tree).then(function () {
-  console.log('tree added');
+    refreshTrees();
   });
 
   $plotId.val('');
@@ -68,6 +69,45 @@ const handleFormSubmit = function (event) {
   $xCoord.val('');
   $yCoord.val('');
   $mapId.val('');
+  
 };
+
+const refreshTrees = function () {
+  API.getTree().then(function (data) {
+    const $examples = data.map(function (tree) {
+      const $a = $('<a>')
+        .text(tree.Scientific_Name)
+        .attr('href', '/tree/' + tree.id);
+
+      const $li = $('<li>')
+        .attr({
+          class: 'list-group-item',
+          'data-id': tree.id
+        })
+        .append($a);
+
+      const $button = $('<button>')
+        .addClass('btn btn-danger float-right delete')
+        .text('ｘ');
+
+      $li.append($button);
+
+      return $li;
+    });
+
+    $treeList.empty();
+    $treeList.append($examples);
+  });
+};
+
+const handleDeleteBtnClick = function () {
+  const idToDelete = $(this).parent().attr('data-id');
+
+  API.deleteTree(idToDelete).then(function () {
+    refreshTrees();
+  });
+};
+
+$treeList.on('click', '.delete', handleDeleteBtnClick);
 
 $submitBtn.on('click', handleFormSubmit);

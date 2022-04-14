@@ -114,6 +114,20 @@ module.exports = (db) => {
     }
   });
 
+  router.get('/tree/:id', function (req, res) {
+    if (req.isAuthenticated()) {
+      db.sites.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbExample) {
+        res.render('tree-detail', {
+          userInfo: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          tree: dbExample
+        });
+      });
+    } else {
+      res.redirect('/');
+    }
+  });
+
   // Render 404 page for any unmatched routes
   router.get('*', function (req, res) {
     res.render('404');
