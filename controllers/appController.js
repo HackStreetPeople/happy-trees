@@ -54,7 +54,6 @@ module.exports = function (db) {
     },
 
     getTreesForAdam: async (req, res) => {
-      console.log('HIT')
       const treeSites = await db.sites.findAll()
       
       res.json(treeSites)
