@@ -40,7 +40,7 @@ text-align: center;
 }
 
 .register {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   background-color: slategray;
   color:white;
@@ -58,3 +58,7 @@ text-align: center;
   height: 200px;
   width:900px;
   }
+
+  input[type="file"] {
+    display: none;
+}
