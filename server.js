@@ -67,12 +67,14 @@ db.sequelize.sync(syncOptions).then(() => {
   }
 
   // Map crap start
+
   const apiOptions = {
     apiKey: "MAP_API_KEY",
     // apiKey: "AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU",
   };
 
   const loader = new Loader(apiOptions);
+  console.log("YOUR LOADER IS NOT DEFINED");
 
   loader.load().then(() => {
     console.log("Maps JS API loaded");
@@ -84,70 +86,99 @@ db.sequelize.sync(syncOptions).then(() => {
 
   function displayMap() {
     const mapOptions = {
-      // The map, centered at The Double Crown Bar
-      center: { lat: 35.57804, lng: -82.57887 },
+      // The map, centered at Banner Farm Mitigation Site
+      center: { lat: 35.350886, lng: -82.556899 },
       zoom: 10,
-      center: doubleCrown,
-      // center: { lat: -33.860664, lng: 151.208138 },
-      // zoom: 14,
-      // mapId: "YOUR_MAP_ID",
+      mapId: "map1",
     };
     const mapDiv = document.getElementById("map");
     return new google.maps.Map(mapDiv, mapOptions);
   }
 
-  function addMarkers(map) {
-    const locations = {
-      moogMusic: { lat: 35.60119, lng: -82.555381 },
-      cumberlandFalls: { lat: 35.604992, lng: -82.564352 },
-      pinballMuseum: { lat: 35.596385, lng: -82.556802 },
-      mccormickField: { lat: 35.587536, lng: -82.549452 },
-      greyEagle: { lat: 35.587072, lng: -82.564484 },
+  function displayMap2() {
+    const mapOptions = {
+      // The map, centered at East Buffalo Mitigation Site
+      center: { lat: 35.3662, lng: -83.8026 },
+      zoom: 10,
+      mapId: "map2",
     };
-    const markers = [];
-    for (const location in locations) {
-      const markerOptions = {
-        map: map,
-        position: locations[location],
-        icon: "./img/custom_pin.png",
-      };
-      const marker = new google.maps.Marker(markerOptions);
-      markers.push(marker);
-    }
-    return markers;
+    const mapDiv = document.getElementById("map");
+    return new google.maps.Map(mapDiv, mapOptions);
   }
 
-  function clusterMarkers(map, markers) {
-    const clustererOptions = { imagePath: "./img/m" };
-    const markerCluster = new MarkerClusterer(map, markers, clustererOptions);
-  }
-
-  function addPanToMarker(map, markers) {
-    let circle;
-    markers.map((marker) => {
-      marker.addListener("click", (event) => {
-        const location = { lat: event.latLng.lat(), lng: event.latLng.lng() };
-        map.panTo(location);
-        if (circle) {
-          circle.setMap(null);
-        }
-        circle = drawCircle(map, location);
-      });
-    });
-  }
-
-  function drawCircle(map, location) {
-    const circleOptions = {
-      strokeColor: "#FF0000",
-      strokeOpacity: 0.8,
-      strokeWeight: 1,
-      map: map,
-      center: location,
-      radius: 800,
+  function displayMap3() {
+    const mapOptions = {
+      // The map, centered at Oak Hill Dairy Mitigation Site
+      center: { lat: 35.40367, lng: -81.35136 },
+      zoom: 10,
+      mapId: "map3",
     };
-    const circle = new google.maps.Circle(circleOptions);
-    return circle;
+    const mapDiv = document.getElementById("map");
+    return new google.maps.Map(mapDiv, mapOptions);
   }
+
+  function displayMap4() {
+    const mapOptions = {
+      // The map, centered at Double H Mitigation Site
+      center: { lat: 36.529847, lng: -80.987143 },
+      zoom: 10,
+      mapId: "map4",
+    };
+    const mapDiv = document.getElementById("map");
+    return new google.maps.Map(mapDiv, mapOptions);
+  }
+  // function addMarkers(map) {
+  //   const locations = {
+  //     moogMusic: { lat: 35.60119, lng: -82.555381 },
+  //     cumberlandFalls: { lat: 35.604992, lng: -82.564352 },
+  //     pinballMuseum: { lat: 35.596385, lng: -82.556802 },
+  //     mccormickField: { lat: 35.587536, lng: -82.549452 },
+  //     greyEagle: { lat: 35.587072, lng: -82.564484 },
+  //   };
+  //   const markers = [];
+  //   for (const location in locations) {
+  //     const markerOptions = {
+  //       map: map,
+  //       position: locations[location],
+  //       icon: "./img/custom_pin.png",
+  //     };
+  //     const marker = new google.maps.Marker(markerOptions);
+  //     markers.push(marker);
+  //   }
+  //   return markers;
+  // }
+
+  // function clusterMarkers(map, markers) {
+  //   const clustererOptions = { imagePath: "./img/m" };
+  //   const markerCluster = new MarkerClusterer(map, markers, clustererOptions);
+  // }
+
+  // function addPanToMarker(map, markers) {
+  //   let circle;
+  //   markers.map((marker) => {
+  //     marker.addListener("click", (event) => {
+  //       const location = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+  //       map.panTo(location);
+  //       if (circle) {
+  //         circle.setMap(null);
+  //       }
+  //       circle = drawCircle(map, location);
+  //     });
+  //   });
+  // }
+
+  // function drawCircle(map, location) {
+  //   const circleOptions = {
+  //     strokeColor: "#FF0000",
+  //     strokeOpacity: 0.8,
+  //     strokeWeight: 1,
+  //     map: map,
+  //     center: location,
+  //     radius: 800,
+  //   };
+  //   const circle = new google.maps.Circle(circleOptions);
+  //   return circle;
+  // }
 
   // Map crap end
 
