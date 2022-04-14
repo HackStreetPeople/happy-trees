@@ -1,70 +1,90 @@
 body {
   background-image: url("../images/trees.jpeg");
-  /* background-size: cover; */
-  /* height:100vh; */
-  /* font-family:cursive; */
+  background-size: cover;
+  height:100vh;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .navbar {
-  /* background-color: slategray; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+  background-color: slategray;
+  color:white;
+  font-weight: bold;
+  border-color: black;
   border-style: ridge;
   border-width: 5px;
-  border-color: black;
-  text-align: right;
-  font-family: cursive;
+  padding: 10px;
+}
+
+.navlinks {
+display: flex;
+flex-direction: row;
+width: 100%;
+justify-content: space-between;
+text-align: center;
+color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.upload-view {
+  display: flex;
+  flex-direction: column;
 }
 
 .jumbotron{
   margin: auto;
   background-color: slategray;
-  color:darkgreen;
+  color:white;
   border-color: black;
   border-style: ridge;
   border-width: 5px;
-  width: 600px;
-  height:100%;
-  margin-top: 20px;
-  text-align: center;
-  font-family: cursive;
-  font-weight: bold;
-}
-
-/* .container {
-  text-align: center;
-} */
-
-.upload, .view, .register{
-  background-color: slategray;
-  color:darkgreen;
-  border-color: black;
-  border-style: ridge;
-  border-width: 5px;
-  margin: 20px;
   padding: 10px;
-  margin-left: 15%;
-  margin-right: 15%;
+  /* height:100%; */
+  /* margin-top: 20px; */
   text-align: center;
-  font-family: cursive;
   font-weight: bold;
 }
 
-.data-types {
+.upload, .view, .register, .login{
+  background-color: slategray;
+  color:white;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  /* margin: auto; */
+}
+
+.register {
+  margin: 20px;
+}
+
+.upload {
+  margin:20px;
+}
+
+.view {
+  margin:20px;
+}
+
+/* .data-types {
   color: black;
   font-size: 20px;
-}
-
-.input {
-  border-style: ridge;
-  border-color: black;
-  margin: 3px;
-  text-align: center;
-  color: darkgreen;
-}
+} */
 
 .button {
   border-style: ridge;
   border-color: black;
   border-width:5px;
   margin: 10px;
-  font-family: cursive;
 }
