@@ -53,7 +53,7 @@ module.exports = function (db) {
       });
     },
 
-    getTreesForAdam: async (req, res) => {
+    getTrees2: async (req, res) => {
       const treeSites = await db.sites.findAll()
       
       res.json(treeSites)
