@@ -89,17 +89,15 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
+    }, { timestamps: false});
 
-  
-    });
-
-    sites.associate = function (models) {
-      sites.belongsTo(models.User, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
+    // sites.associate = function (models) {
+    //   sites.belongsTo(models.User, {
+    //     foreignKey: {
+    //       allowNull: false
+    //     }
+    //   });
+    // };
 
   
 
