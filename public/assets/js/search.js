@@ -29,7 +29,7 @@ const API = {
       API.getTree().then(data => {
         //   console.log(data);
         for (let index = 0; index < data.length; index++) {
-            const element = data[index].scientificName;
+            const element = data[index].Scientific_Name;
             treeName.push(element);
             
         }

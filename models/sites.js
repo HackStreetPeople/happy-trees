@@ -1,4 +1,4 @@
-
+// create plant data table
 
 module.exports = function (sequelize, DataTypes) {
     const sites = sequelize.define('sites', {
@@ -90,6 +90,18 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false
       },
 
-    })
+  
+    });
+
+    sites.associate = function (models) {
+      sites.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
+  
+
     return sites;
 }
