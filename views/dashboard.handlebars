@@ -17,7 +17,7 @@
     <div class="tree-data">
 
       <div class="upload">
-        <h1 class="has-text-black is-size-3">Upload CSV file to MySQL database</h1>
+        <h1 class="has-text-black is-size-3">Upload CSV file with tree Data into database</h1>
         <form action="/uploadfile" enctype="multipart/form-data" method="post">
           <input type="file" name="uploadfile" accept='csv'>
           <input type="submit" value="Upload CSV">
@@ -38,6 +38,69 @@
     <!--The div element for the map -->
     <div id="map">
     </div>
+    <!--  Here's the code for the Google map-->
+<script>
+function initMap()
+{
+    let lenoir = {lat: 35.9140196, lng: -81.5389849};
+    let map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 6,
+        center: lenoir,
+    });
+
+// ARRAY of multiple markers
+    let markers = [
+    {
+        coords: {lat: 36.529847, lng: -80.987143},
+        content: "<h3>Double H Mitigation Site</h3>"
+    },
+
+    {
+    coords: {lat: 35.350886, lng: -82.556899},
+    content: "<h3>Banner Farm Road Mitigation Site</h3>"
+    },
+
+    {
+    coords: {lat: 35.403670, lng: -81.351360},
+    content: "<h3>Oak Hill Dairy Mitigation Site</h3>"
+    },    
+
+    {
+    coords: {lat: 35.3662, lng: -83.8026},
+    content: "<h3>East Buffalo Creek Mitigation Site</h3>"
+    }
+];
+ 
+// Loop through markers
+for(let i = 0; i < markers.length; i++) {
+    // Add the marker w/ this
+    addMarker(markers[i]);
+}
+
+
+function addMarker(props){
+    let marker = new google.maps.Marker({
+        position: props.coords,
+        map: map 
+    });
+
+
+// Check the content
+if(props.content){
+    let infoWindow = new google.maps.InfoWindow({
+        content:props.content
+    });
+
+    marker.addListener("click", function(){
+        infoWindow.open(map, marker);
+    });
+    }
+}
+
+}
+</script>
+
+
     <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
@@ -64,9 +127,24 @@
               result.map(tree => {
                 const treedata = document.getElementById('treedata')
                 const paragraph = document.createElement('p')
-                paragraph.textContent = tree.Scientific_Name
+                const paragraph2 = document.createElement('p')
+                const paragraph3 = document.createElement('p')
+                const paragraph4 = document.createElement('p')
+                const paragraph5 = document.createElement('p')
+                const paragraph6 = document.createElement('p')
+                paragraph.textContent = `Plant species: ${tree.Scientific_Name}`
+                paragraph2.textContent = `Plot ID: ${tree.Plot_ID}`
+                paragraph3.textContent = `Initial height: ${tree.MY0_Height}`
+                paragraph4.textContent = `Planted/Volunteer: ${tree.Planted_or_Volunteer}`
+                paragraph5.textContent = `Approval plan: ${tree.Performance_Standard_Approval}`
+                paragraph6.textContent = "---------"
 
                 treedata.appendChild(paragraph)
+                treedata.appendChild(paragraph2)
+                treedata.appendChild(paragraph3)
+                treedata.appendChild(paragraph4)
+                treedata.appendChild(paragraph5)
+                treedata.appendChild(paragraph6)
               })
             })
             .catch(error => console.log('error', error));
