@@ -40,7 +40,7 @@ text-align: center;
 }
 
 .register {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   background-color: slategray;
   color:white;
@@ -55,6 +55,10 @@ text-align: center;
 }
 
 #map {
+
   min-height: 20rem;
   min-width: 60rem;
+  input[type="file"] {
+    display: none;
+
 }

@@ -1,4 +1,4 @@
-// import { Loader } from "@googlemaps/js-api-loader";
+import { Loader } from "@googlemaps/js-api-loader";
 // import MarkerClusterer from "@google/markerclustererplus";
 
 $("#add-user").on("click", function (event) {
@@ -139,7 +139,7 @@ $("#login").on("click", function (event) {
       $(document.location).attr("href", "/dashboard");
     } else {
       $("#login-err-msg").empty("").text(result.error);
-      $("#user-info").modal("hide");
+      // $("#user-info").modal("hide");
     }
   });
 });
