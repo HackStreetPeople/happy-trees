@@ -53,3 +53,8 @@ text-align: center;
   margin-left: 25%;
   margin-right: 25%;
 }
+
+#map {
+  min-height: 20rem;
+  min-width: 60rem;
+}
