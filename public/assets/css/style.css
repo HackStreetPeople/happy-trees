@@ -54,6 +54,9 @@ text-align: center;
   margin-right: 25%;
 }
 
+.bob {
+  background-image: url("public/assets/images/bob-ross-happy-trees_u-L-F9DGYJ0.jpeg");
+}
 #map {
   height: 200px;
   width:900px;
