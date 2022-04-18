@@ -43,7 +43,6 @@ text-align: right;
 
 .tree-data, .map, footer{
   background-color: slategray;
-  color:white;
   border-color: black;
   border-style: ridge;
   border-width: 5px;
