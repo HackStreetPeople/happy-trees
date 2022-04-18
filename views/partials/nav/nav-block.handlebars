@@ -1,23 +1,21 @@
 <nav class="navbar">
 
-  <div class="navlinks">
-      <h1 class="has-text-black is-size-1 has-text-weight-bold">Happy Trees</a>
-      <h2 class="is-size-4">A helpful resource in viewing data collected on trees planted by mitigation companies.</h2>
-    {{!-- {{#if isloggedin}}
-    <li>
-      <a class="link has-text-white is-size-3" href="/logout">Logout</a>
-    </li> --}}
+    <div class="welcome">
+      <h1 class="has-text-black is-size-1 has-text-weight-bold">Happy Trees:</a></h1>
+      <h2 class="has-text-white is-size-3 has-text-weight-bold">Making data easier to view since 2022!</h2>
+      <h3 class="has-text-white is-size-5 has-text-weight-bold">An app for uploading and viewing tree planting data for mitigation companies</h3>
+    </div>
 
-    {{!-- {{else}} --}}
-    {{!-- <li>
-      <a class="link has-text-white is-size-3" href="/login" data-login={{login-block}}>Login</a>
-    </li> --}}
-    {{!-- <li>
-      <a class="link has-text-white is-size-3" href="/register" data-register={{register}}>Register</a>
-    </li> --}}
+    <div class="login">
+      {{#if isloggedin}}
+      You are logged in as {{user.firstName}}
+      <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
+      {{else}}
+      {{>modal/login-block}}
+      {{/if}}
+      <h5 id="login-err-msg"></h5>
+    </div>
 
-    {{!-- {{/if}} --}}
-  </div>
 </nav>
 
 {{!-- {{>modal/login-block}} --}}

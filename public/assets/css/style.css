@@ -1,33 +1,47 @@
 @import 'bulma_npm.css';
 
-body {
+html {
   background-image: url("../images/trees.jpeg");
   background-size: cover;
   height:100vh;
+}
+
+body {
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-.navlinks {
+.navbar {
 display: flex;
-flex-direction: column;
+flex-wrap: wrap;
+flex-direction: row;
 width: 100%;
-justify-content: space-around;
-text-align: center;
+justify-content: space-between;
+background-color: slategray;
+border-color: black;
+border-style: ridge;
+border-width: 5px;
+padding: 10px;
+margin: 10px;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.login {
+text-align: right;
 }
 
 .container {
-  /* margin: 75px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.header {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.navbar, .login, .upload, .view, .map{
+.tree-data, .map, footer{
   background-color: slategray;
   color:white;
   border-color: black;
@@ -39,28 +53,33 @@ text-align: center;
   margin: 10px;
 }
 
+.list {
+  text-align: left;
+}
+
+.button {
+  cursor: pointer;
+}
+
 .register {
-  /* display: flex; */
-  flex-direction: column;
   background-color: slategray;
-  color:white;
   border-color: black;
   border-style: ridge;
   border-width: 5px;
   padding: 10px;
   text-align: center;
   font-weight: bold;
+  margin-top: 10%;
   margin-left: 25%;
   margin-right: 25%;
 }
 
 #map {
-
-  min-height: 20rem;
-  min-width: 60rem;
+  min-height: 35vh;
+  min-width: 60vw;
 }
 
+/* i might need this to style a button */
   /* input[type="file"] {
     display: none;
-
 } */
