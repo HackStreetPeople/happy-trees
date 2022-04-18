@@ -52,11 +52,11 @@
   This project is covered under the MIT license
   
   ## Contributing
-  [Jordan H.](https://github.com/JHESSLER11): Back-end routing / CSV File Reader/Uploader Development<br/>
-  [Blair S.](https://github.com/dogmom3): UI Design / HTML/Handlebars and CSS Styling<br/>
-  [Abi P.](https://github.com/Apjuve): Front-end JavaScript / Site Routing<br/>
-  [Adam P.](https://github.com/agpritts): SQL / Git conflict resolution / Debugging<br/>
-  [Mark H.](https://github.com/utilrr): Google Maps API / Scrum Master<br/>
+  [Jordan H.](https://github.com/JHESSLER11) - Back-end routing / CSV File Reader/Uploader Development<br/>
+  [Blair S.](https://github.com/dogmom3) - UI Design / HTML/Handlebars and CSS Styling<br/>
+  [Abi P.](https://github.com/Apjuve) - Front-end JavaScript / Site Routing<br/>
+  [Adam P.](https://github.com/agpritts) - SQL / Git conflict resolution / Debugging<br/>
+  [Mark H.](https://github.com/utilrr) - Google Maps API / Scrum Master<br/>
   
   ## Tests
   N/A<br/>
@@ -81,3 +81,5 @@
   User registration:<br/>
   <br/>
   <img width="1545" alt="Screen Shot 2022-04-17 at 8 06 40 PM" src="https://user-images.githubusercontent.com/96213926/163737221-f83cd232-90aa-4a29-982b-2aa4380e9e69.png">
+
+
