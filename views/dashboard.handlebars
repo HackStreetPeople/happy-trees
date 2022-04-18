@@ -33,14 +33,64 @@
 
   </div>
 
-  <div class="bob map has-text-black is-size-3">
+  <div class="map has-text-black is-size-3">
     <h2>Mitigation Site Locations</h2>
     <!--The div element for the map -->
     <div id="map">
+      <img src="../public/assets/images/map.png" alt="map of mitigation sites" width="900" height="200">
     </div>
+    <!--  Here's the code for the Google map-->
+<script>
+function initMap(sites)
+{
+  console.log("PRINTING MAP")
+    let lenoir = {lat: 35.9140196, lng: -81.5389849};
+    let map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 6,
+        center: lenoir,
+    });
+
+// ARRAY of multiple markers
+    let markers = sites || []
+
+ 
+// Loop through markers
+for(let i = 0; i < markers.length; i++) {
+    // Add the marker w/ this
+    addMarker(markers[i]);
+}
+
+
+function addMarker(props){
+    let marker = new google.maps.Marker({
+        position: props.coords,
+        map: map 
+    });
+
+
+// Check the content
+if(props.content){
+    let infoWindow = new google.maps.InfoWindow({
+        content:props.content
+    });
+
+    marker.addListener("click", function(){
+        infoWindow.open(map, marker);
+    });
+    }
+}
+
+}
+</script>
+
+    <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key={{getMapKey}}&callback=initMap&v=weekly">
+      </script>
+    {{!-- </div>
     <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
     <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly"> --}}
       </script>
 
       <script>
@@ -86,5 +136,30 @@
             })
             .catch(error => console.log('error', error));
         })
+ // fetch sites 
+        // /sites/map
+        // initMap(res.data)
+          initMap([
+        {
+          coords: { lat: 36.529847, lng: -80.987143 },
+          content: "<h3>Double H Mitigation Site<br />lat: 36.529847, lng: -80.987143</h3>",
+        },
+
+        {
+          coords: { lat: 35.350886, lng: -82.556899 },
+          content: "<h3>Banner Farm Road Mitigation Site<br />lat: 35.350886, lng: -82.556899</h3>",
+        },
+
+        {
+          coords: { lat: 35.40367, lng: -81.35136 },
+          content: "<h3>Oak Hill Dairy Mitigation Site<br />lat: 35.40367, lng: -81.35136</h3>",
+        },
+
+        {
+          coords: { lat: 35.3662, lng: -83.8026 },
+          content: "<h3>East Buffalo Creek Mitigation Site<br />lat: 35.3662, lng: -83.8026</h3>",
+        },
+        ])
+
       </script>
   </div>
