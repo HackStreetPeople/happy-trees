@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const exphbs = require('express-handlebars');
+const { create } = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const passport = require('passport');
@@ -19,8 +19,16 @@ app.use(bodyparser.urlencoded({
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+const exphbs = create({
+  helpers: {
+    getMapKey() {
+      console.log("getting map key");
+      return process.env.MAP_API_KEY;
+    },
+  },
+});
+app.engine("handlebars", exphbs.engine);
+app.set("view engine", "handlebars");
 
 if (app.get('env') !== 'test') {
   app.use(morgan('dev')); // Hook up the HTTP logger
