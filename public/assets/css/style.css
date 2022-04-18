@@ -40,7 +40,7 @@ text-align: center;
 }
 
 .register {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   background-color: slategray;
   color:white;
@@ -56,4 +56,12 @@ text-align: center;
 
 .bob {
   background-image: url("public/assets/images/bob-ross-happy-trees_u-L-F9DGYJ0.jpeg");
+}
+#map {
+  height: 200px;
+  width:900px;
+  }
+
+  input[type="file"] {
+    display: none;
 }
