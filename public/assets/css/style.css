@@ -36,7 +36,7 @@ text-align: right;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -50,6 +50,11 @@ text-align: right;
   text-align: center;
   font-weight: bold;
   margin: 10px;
+}
+
+.tree-data {
+  display: flex;
+  flex-direction: row;
 }
 
 .list {
@@ -73,12 +78,18 @@ text-align: right;
   margin-right: 25%;
 }
 
-#map {
-  min-height: 35vh;
-  min-width: 60vw;
+#treedata {
+  text-align: left;
+  color: darkgreen;
+  padding: 10px;
 }
 
-/* this helps style the select file button */
+#map {
+  min-height: 35vh;
+  min-width: 70vw;
+}
+
+/* this helps style the 'select file' button */
   input[type="file"] {
     display: none;
 }
