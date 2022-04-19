@@ -4,16 +4,22 @@
     <div class="tree-data">
 
         <p class="list has-text-black is-size-2">Step 1:</p>
+
         <form action="/uploadfile" enctype="multipart/form-data" method="post">
-          <input type="file" name="uploadfile" accept='csv'>
+
+          <label class="button is-black link has-text-success-dark is-size-4">Select File
+            <input type="file" name="uploadfile" accept='csv'>
+          </label>
           
           <p class="list has-text-black is-size-2">Step 2:</p>
-          <input class="button is-black link has-text-success-dark is-size-3" type="submit" value="Upload CSV">
+
+          <input class="button is-black link has-text-success-dark is-size-4" type="submit" value="Upload CSV">
         </form>
 
         <p class="list has-text-black is-size-2">Step 3:</p>
-        <button class="button is-black has-text-white is-size-3" id="getTrees">
-          <a class="link has-text-success-dark is-size-3" href="/get-trees" data-get-trees={{get-trees}}>View Data</a>
+
+        <button class="button is-black is-size-4" id="getTrees">
+         <a class="link has-text-success-dark" href="/tree-detail" data-tree-detail={{tree-detail}}>View Data</a>
         </button>
         <div id="treedata"></div>
      
