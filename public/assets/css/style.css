@@ -78,7 +78,7 @@ text-align: right;
   min-width: 60vw;
 }
 
-/* i might need this to style a button */
-  /* input[type="file"] {
+/* this helps style the select file button */
+  input[type="file"] {
     display: none;
-} */
+}
