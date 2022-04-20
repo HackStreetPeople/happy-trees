@@ -1,158 +1,173 @@
 <div class="container">
   {{> nav/nav-block}}
 
+  <div class="main">
+
     <div class="tree-data">
 
-        <p class="list has-text-black is-size-3">Step 1:</p>
-        <form action="/uploadfile" enctype="multipart/form-data" method="post">
-          <label class="button is-black link has-text-success is-size-5">Select File
-            <input type="file" name="uploadfile" accept='csv'>
-          </label>
-        </form>
-          
-          <p class="list has-text-black is-size-3">Step 2:</p>
-          <input class="button is-black link has-text-success is-size-5" type="submit" value="Upload CSV">
+      <div class="steps">
 
-        <p class="list has-text-black is-size-3">Step 3:</p>
-        <button class="button is-black is-size-5 has-text-success" id="getTrees">
-
-          {{!-- uncomment out below <a> tag surrounding 'View Data' to link to another page for data display --}}
-         {{!-- <a class="link has-text-success-dark" href="/tree-detail" data-tree-detail={{tree-detail}}> --}}
-         View Data
-         {{!-- </a> --}}
-
-        </button>
-        <div id="treedata"> 
+        <div class="buttons">
+          <p class="list has-text-white is-size-3 has-text-weight-bold">Step 1:</p>
+          <form action="/uploadfile" enctype="multipart/form-data" method="post">
+            <label class="button is-black link has-text-success is-size-5">Select File
+              <input type="file" name="uploadfile" accept='csv'>
+            </label>
+          </form>
         </div>
-     
+
+        <div class="buttons">
+          <p class="list has-text-white is-size-3 has-text-weight-bold">Step 2:</p>
+          <input class="button is-black link has-text-success is-size-5" type="submit" value="Upload CSV">
+        </div>
+
+        <div class="buttons">
+          <p class="list has-text-white is-size-3 has-text-weight-bold">Step 3:</p>
+          <button class="button is-black is-size-5 has-text-success" id="getTrees">
+            View Data
+          </button>
+        </div>
+
+      </div>
+
+      <div class="table">
+        <div id="treedata"> </div>
+      </div>
+
     </div>
 
-  <div class="map">
-    <h2 class="has-text-black is-size-2 has-text-weight-bold">Mitigation Site Locations</h2>
-    <!--The div element for the map -->
-    <div id="map">
-      <img src="../public/assets/images/map.png" alt="map of mitigation sites">
-    </div>
-    <!--  Here's the code for the Google map-->
-    <script>
-      function initMap(sites) {
-        console.log("PRINTING MAP")
-        let lenoir = { lat: 35.9140196, lng: -81.5389849 };
-        let map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 6,
-          center: lenoir,
-        });
+    <div class="map">
+      <h2 class="map-text has-text-white is-size-2 has-text-weight-bold">Mitigation Site Locations</h2>
+      <!--The div element for the map -->
+      <div id="map">
+        <img src="../public/assets/images/map.png" alt="map of mitigation sites">
+      </div>
 
-        // ARRAY of multiple markers
-        let markers = sites || []
-
-        // Loop through markers
-        for (let i = 0; i < markers.length; i++) {
-          // Add the marker w/ this
-          addMarker(markers[i]);
-        }
-
-        function addMarker(props) {
-          let marker = new google.maps.Marker({
-            position: props.coords,
-            map: map
+      <!--  Here's the code for the Google map-->
+      <script>
+        function initMap(sites) {
+          console.log("PRINTING MAP")
+          let lenoir = { lat: 35.9140196, lng: -81.5389849 };
+          let map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 6,
+            center: lenoir,
           });
 
-          // Check the content
-          if (props.content) {
-            let infoWindow = new google.maps.InfoWindow({
-              content: props.content
+          // ARRAY of multiple markers
+          let markers = sites || []
+
+          // Loop through markers
+          for (let i = 0; i < markers.length; i++) {
+            // Add the marker w/ this
+            addMarker(markers[i]);
+          }
+
+          function addMarker(props) {
+            let marker = new google.maps.Marker({
+              position: props.coords,
+              map: map
             });
 
-            marker.addListener("click", function () {
-              infoWindow.open(map, marker);
-            });
+            // Check the content
+            if (props.content) {
+              let infoWindow = new google.maps.InfoWindow({
+                content: props.content
+              });
+
+              marker.addListener("click", function () {
+                infoWindow.open(map, marker);
+              });
+            }
           }
         }
+      </script>
 
-      }
-    </script>
+      <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
+      <script src="https://maps.googleapis.com/maps/api/js?key={{getMapKey}}&callback=initMap&v=weekly">
+      </script>
 
+    </div>
+
+{{!-- is the below async map code necessary or can we delete? --}}
     <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script src="https://maps.googleapis.com/maps/api/js?key={{getMapKey}}&callback=initMap&v=weekly">
-    </script>
-    
-  </div>
- {{!-- <!-- My Map Here: Async script executes immediately and must be after any DOM elements used in callback. -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly"> --}}
-    </script>
-  <script>
-    const getTreesButton = document.getElementById('getTrees')
+    {{!--
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplpc0oQkWZMiH7Qhu9RruadMb6PikeuU&callback=initMap&v=weekly">
+      </script> --}}
 
-    getTreesButton.addEventListener('click', () => {
-      console.log('get trees')
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+    <script>
+      const getTreesButton = document.getElementById('getTrees')
 
-      var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
+      getTreesButton.addEventListener('click', () => {
+        console.log('get trees')
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-      fetch("/api/trees2", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-          console.log('TREES ', result)
-          result.map(tree => {
-            const treedata = document.getElementById('treedata')
-            const paragraph = document.createElement('p')
-            const paragraph2 = document.createElement('p')
-            const paragraph3 = document.createElement('p')
-            const paragraph4 = document.createElement('p')
-            const paragraph5 = document.createElement('p')
-            const paragraph6 = document.createElement('p')
-            paragraph.textContent = `Plant species: ${tree.Scientific_Name}`
-            paragraph2.textContent = `Plot ID: ${tree.Plot_ID}`
-            paragraph3.textContent = `Initial height: ${tree.MY0_Height}`
-            paragraph4.textContent = `Planted/Volunteer: ${tree.Planted_or_Volunteer}`
-            paragraph5.textContent = `Approval plan: ${tree.Performance_Standard_Approval}`
-            paragraph6.textContent = "---------"
+        var requestOptions = {
+          method: 'GET',
+          headers: myHeaders,
+          redirect: 'follow'
+        };
 
-            treedata.appendChild(paragraph)
-            treedata.appendChild(paragraph2)
-            treedata.appendChild(paragraph3)
-            treedata.appendChild(paragraph4)
-            treedata.appendChild(paragraph5)
-            treedata.appendChild(paragraph6)
+        fetch("/api/trees2", requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log('TREES ', result)
+            result.map(tree => {
+              const treedata = document.getElementById('treedata')
+              const paragraph = document.createElement('p')
+              const paragraph2 = document.createElement('p')
+              const paragraph3 = document.createElement('p')
+              const paragraph4 = document.createElement('p')
+              const paragraph5 = document.createElement('p')
+              const paragraph6 = document.createElement('p')
+              paragraph.textContent = `Plant species: ${tree.Scientific_Name}`
+              paragraph2.textContent = `Plot ID: ${tree.Plot_ID}`
+              paragraph3.textContent = `Initial height: ${tree.MY0_Height}`
+              paragraph4.textContent = `Planted/Volunteer: ${tree.Planted_or_Volunteer}`
+              paragraph5.textContent = `Approval plan: ${tree.Performance_Standard_Approval}`
+              paragraph6.textContent = "---------"
+
+              treedata.appendChild(paragraph)
+              treedata.appendChild(paragraph2)
+              treedata.appendChild(paragraph3)
+              treedata.appendChild(paragraph4)
+              treedata.appendChild(paragraph5)
+              treedata.appendChild(paragraph6)
+            })
           })
-        })
-        .catch(error => console.log('error', error));
-    })
-    // fetch sites 
-    // /sites/map
-    // initMap(res.data)
-    initMap([
-      {
-        coords: { lat: 36.529847, lng: -80.987143 },
-        content: "<h3>Double H Mitigation Site<br />lat: 36.529847, lng: -80.987143</h3>",
-      },
+          .catch(error => console.log('error', error));
+      })
+      // fetch sites 
+      // /sites/map
+      // initMap(res.data)
+      initMap([
+        {
+          coords: { lat: 36.529847, lng: -80.987143 },
+          content: "<h3>Double H Mitigation Site<br />lat: 36.529847, lng: -80.987143</h3>",
+        },
 
-      {
-        coords: { lat: 35.350886, lng: -82.556899 },
-        content: "<h3>Banner Farm Road Mitigation Site<br />lat: 35.350886, lng: -82.556899</h3>",
-      },
+        {
+          coords: { lat: 35.350886, lng: -82.556899 },
+          content: "<h3>Banner Farm Road Mitigation Site<br />lat: 35.350886, lng: -82.556899</h3>",
+        },
 
-      {
-        coords: { lat: 35.40367, lng: -81.35136 },
-        content: "<h3>Oak Hill Dairy Mitigation Site<br />lat: 35.40367, lng: -81.35136</h3>",
-      },
+        {
+          coords: { lat: 35.40367, lng: -81.35136 },
+          content: "<h3>Oak Hill Dairy Mitigation Site<br />lat: 35.40367, lng: -81.35136</h3>",
+        },
 
-      {
-        coords: { lat: 35.3662, lng: -83.8026 },
-        content: "<h3>East Buffalo Creek Mitigation Site<br />lat: 35.3662, lng: -83.8026</h3>",
-      },
-    ])
+        {
+          coords: { lat: 35.3662, lng: -83.8026 },
+          content: "<h3>East Buffalo Creek Mitigation Site<br />lat: 35.3662, lng: -83.8026</h3>",
+        },
+      ])
 
-  </script>
-  
+    </script>
+  </div>
+
   <footer>
-    <h1 class="has-text-black has-text-weight-bold is-size-4">Created by 'The Hackstreet People' for Project #2 @ UNC Coding Bootcamp</h1>
+    <h1 class="has-text-black has-text-weight-bold is-size-4">Created by 'The Hackstreet People' for Project #2 @ UNC
+      Coding Bootcamp</h1>
   </footer>
 </div>

@@ -1,14 +1,14 @@
-{{!-- uncommenting the below nav/nav-block line will create a second nav-block on the page --}}
+{{!-- uncommenting the below nav/nav-block line will exceed maximum call stack --}}
 {{!-- {{> nav/nav-block user=true login=true}} --}}
 <div>
   <header align="center">
     <h1 class="has-text-black is-size-4 has-text-weight-bold ">Login or 
       <a class="link has-text-white is-underlined is-size-4" href= "/register"
         data-register={{register}}>Register</a></h1>
-    <h3 id="create-err-msg"></h3>
+    <h3 id="create-err-msg"></h3> {{!-- do we need both of these err msg? --}}
   </header>
-  {{!-- do we need both of these err msg on line 6 & 9? --}}
-  <h3 id="err-msg"></h3>
+
+  <h3 id="err-msg"></h3> {{!-- do we need both of these err msg? --}}
 
   <div class="login-input">
     <div class="form-group">
@@ -28,7 +28,7 @@
       </div>
 
       <div>
-        <button id="login" type="button" class="button is-black has-text-white is-size-7 has-text-weight-bold">Login</button>
+        <button id="login" type="button" class="button is-black has-text-white is-size-6 has-text-weight-bold">Login</button>
       </div>
       
     </div>
