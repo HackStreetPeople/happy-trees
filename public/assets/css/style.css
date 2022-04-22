@@ -28,8 +28,26 @@ body {
   text-align: center;
 }
 
+.appname {
+  border-style: ridge;
+  border-color: black;
+  border-width: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .login {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   text-align: right;
+  align-items: center;
+  border-style: ridge;
+  border-width: 5px;
+  border-color: black;
+  background-color: white;
+padding: 10px;
 }
 
 .register {
@@ -75,7 +93,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* margin: 10px; */
 }
 
 .buttons{
@@ -89,7 +106,7 @@ body {
 }
 
 .table {
-  background-color: white;
+  /* background-color: white; */
   border-color: black;
   border-style: ridge;
   border-width: 5px;
@@ -100,7 +117,8 @@ body {
 }
 
 #treedata {
-  color: darkgreen;
+  color: black;
+  font-weight: bold;
   /* padding: 10px; */
 }
 
@@ -133,6 +151,7 @@ footer {
   padding: 10px;
   text-align: center;
   margin: 10px;
+  width: 100%;
 }
 
 /* this helps style the 'select file' button */

@@ -1,15 +1,15 @@
 <nav class="navbar">
 
     <div class="welcome">
-      <h1 class="has-text-white is-size-2 has-text-weight-bold">Happy Trees:</h1>
+      <h1 class="appname has-text-black has-background-success-dark is-size-2 has-text-weight-bold">Happy Trees</h1>
       <h2 class="has-text-black is-size-4 has-text-weight-bold">Making data easier to view since 2022!</h2>
       <h3 class="has-text-black is-size-5 has-text-weight-bold">An app for uploading and viewing tree planting data for mitigation companies</h3>
     </div>
 
-    <div class="login has-text-black is-size-5 has-text-weight-bold">
+    <div class="login has-text-black is-size-5 has-text-weight-bold has-background-success-dark">
       {{#if isloggedin}}
-     You are logged in as {{user.firstName}}
-      <a href="/logout"> <button type="btn" class="button is-black has-text-white has-text-weight-bold is-size-6">Logout</button></a>
+     You are logged in as <div class="has-text-white is-size-5 has-text-weight-bold">{{user.firstName}} {{user.lastName}}</div>
+      <a href="/logout"> <button type="btn" class="button is-black has-text-success has-text-weight-bold is-size-6">Logout</button></a>
       {{else}}
       {{>modal/login-block}}
       {{/if}}
