@@ -3,25 +3,25 @@
 html {
   background-image: url("../images/trees.jpeg");
   background-size: cover;
-  height:100vh;
+  height: 100vh;
 }
 
 body {
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .navbar {
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-width: 100%;
-justify-content: space-between;
-background-color: slategray;
-border-color: black;
-border-style: ridge;
-border-width: 5px;
-padding: 10px;
-margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  background-color: slategray;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .welcome {
@@ -29,40 +29,7 @@ margin: 10px;
 }
 
 .login {
-text-align: right;
-}
-
-.container {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.tree-data, .map, footer{
-  background-color: slategray;
-  border-color: black;
-  border-style: ridge;
-  border-width: 5px;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  margin: 10px;
-}
-
-.tree-data {
-  display: flex;
-  flex-direction: row;
-}
-
-.list {
-  text-align: left;
-}
-
-.button {
-  cursor: pointer;
+  text-align: right;
 }
 
 .register {
@@ -78,18 +45,97 @@ text-align: right;
   margin-right: 25%;
 }
 
-#treedata {
-  text-align: left;
-  color: darkgreen;
-  padding: 10px;
+.container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
+.main {
+  display:flex;
+  flex-direction: row;
+}
+
+.tree-data {
+  display: flex;
+  flex-direction: column;
+  background-color: slategray;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* margin: 10px; */
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.table {
+  background-color: white;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  /* margin: 10px; */
+  height: 40vh;
+  width: 35vw;
+  overflow: auto;
+}
+
+#treedata {
+  color: darkgreen;
+  /* padding: 10px; */
+}
+
+.map {
+  text-align: center;
+  background-color: slategray;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  margin: 10px;
+}
+
+.map-text {
+  margin: 10px;
+}
 #map {
-  min-height: 35vh;
-  min-width: 70vw;
+  min-height: 40vh;
+  min-width: 35vw;
+  margin: 10px;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+}
+
+footer {
+  background-color: slategray;
+  border-color: black;
+  border-style: ridge;
+  border-width: 5px;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
 }
 
 /* this helps style the 'select file' button */
-  input[type="file"] {
-    display: none;
+input[type="file"] {
+  display: none;
 }
