@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar {
@@ -28,8 +28,32 @@ body {
   text-align: center;
 }
 
+.appname {
+  /* border-style: ridge;
+  border-color: black;
+  border-width: 5px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background:green;
+  /* The below line has an error, but it is neccessary for the font-oultine effect. I'll look into fixes */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
 .login {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   text-align: right;
+  align-items: center;
+  border-style: ridge;
+  border-width: 5px;
+  border-color: black;
+  background-color: white;
+  padding: 10px;
 }
 
 .register {
@@ -75,7 +99,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* margin: 10px; */
 }
 
 .buttons{
@@ -89,7 +112,7 @@ body {
 }
 
 .table {
-  background-color: white;
+  /* background-color: white; */
   border-color: black;
   border-style: ridge;
   border-width: 5px;
@@ -100,7 +123,8 @@ body {
 }
 
 #treedata {
-  color: darkgreen;
+  color: black;
+  font-weight: bold;
   /* padding: 10px; */
 }
 
@@ -133,6 +157,7 @@ footer {
   padding: 10px;
   text-align: center;
   margin: 10px;
+  width: 100%;
 }
 
 /* this helps style the 'select file' button */
