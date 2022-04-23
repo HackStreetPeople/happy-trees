@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar {
@@ -29,12 +29,18 @@ body {
 }
 
 .appname {
-  border-style: ridge;
+  /* border-style: ridge;
   border-color: black;
-  border-width: 5px;
+  border-width: 5px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background:green;
+  /* The below line has an error, but it is neccessary for the font-oultine effect. I'll look into fixes */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 .login {
@@ -47,7 +53,7 @@ body {
   border-width: 5px;
   border-color: black;
   background-color: white;
-padding: 10px;
+  padding: 10px;
 }
 
 .register {
